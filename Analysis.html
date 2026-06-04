@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/Analysis.css">
+    <title>AgroInsight — Crop Analysis</title>
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar"><span></span><span></span><span></span></button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+   
+<!-- ── HEADER ─────────────────────────────────────────────── -->
+ <div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="logo">
+      <div class="logo-box">🌾</div>
+
+      <div class="logo-text" id="logoText">
+        <h2>AgroInsight</h2>
+        <p>Impact Analytics</p>
+      </div>
+    </div>
+  
+
+    <nav>
+      <button class="nav-btn" onclick="window.location.href='Weather.html'">
+        <i data-lucide="home"></i>
+        <span>Dashboard</span>
+      </button>
+
+      <button class="nav-btn active">
+        <i data-lucide="leaf"></i>
+        <span>Crop Analysis</span>
+      </button>
+
+      <button class="nav-btn" onclick="window.location.href='Alert.html'">
+        <i data-lucide="alert-triangle"></i>
+        <span>Disaster Alerts</span>
+      </button>
+
+      <button class="nav-btn" onclick="window.location.href='Economi.html'">
+        <i data-lucide="dollar-sign"></i>
+        <span>Economic Impact</span>
+      </button>
+
+      <button class="nav-btn" onclick="window.location.href='Chatbot.html'">
+        <i data-lucide="bot"></i>
+        <span>Chatbot</span>
+      </button>
+
+      <button class="nav-btn" onclick="window.location.href='Settings.html'">
+        <i data-lucide="activity"></i>
+        <span>Settings</span>
+      </button>
+    </nav>
+
+    <button class="toggle-btn" id="toggleBtn">
+      <i data-lucide="menu"></i>
+    </button>
+
+  </aside>
+   <!-- MAIN -->
+  <main class="main">
+  <div class="nav-a">
+      <div class="nav-menu">
+    <a class="active" href="Index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="Contact.html">Contact</a>
+      </div>
+      <div class="nav-right">
+    <button class="btn-nav-ghost" onclick="window.location.href='About.html'">About Us</button>
+    <button class="btn-nav-fill" onclick="window.location.href='logout.html'">Logout</button>
+    </div>
+
+  </div>
+  <br>
+   
+<!-- ── HEADER ─────────────────────────────────────────────── -->
+<div style="background:rgba(4,10,7,.97);border-bottom:1px solid rgba(34,197,94,.1);padding:13px 22px;display:flex;align-items:center;gap:12px;;top:0;z-index:100;backdrop-filter:blur(18px);">
+  <div style="width:33px;height:33px;border-radius:9px;background:linear-gradient(135deg,#22c55e,#15803d);display:flex;align-items:center;justify-content:center;font-size:16px;">🌾</div>
+  <div>
+    <div style="font-size:10px;color:#4b5563;">AgriWeather › Module 2</div>
+    <div style="font-size:14px;font-weight:700;">Crop-Wise Impact Analysis</div>
+  </div>
+  
+  <div style="margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+    <span><span class="glow-dot"></span> <span style="font-size:11px;color:var(--green);font-weight:600;">ML Model Active</span></span>
+    <span style="background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);color:var(--green);padding:3px 11px;border-radius:20px;font-size:10px;font-weight:700;">🤖 AI Predictions ON</span>
+    <span style="background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3);color:var(--amber);padding:3px 11px;border-radius:20px;font-size:10px;font-weight:700;">📅 Kharif 2025</span>
+  </div>
+</div>
+
+<div style="padding:20px;max-width:1380px;margin:0 auto;">
+    
+
+  <!-- ── STEP 1: CROP SELECTOR ──────────────────────────── -->
+  <div class="fade-up mb-4">
+    <div class="section-tag"><span class="glow-dot"></span> Step 1</div>
+    <h5 style="font-weight:800;margin-bottom:3px;">Select Crop for Analysis</h5>
+    <p style="color:var(--muted);font-size:12px;margin-bottom:14px;">Click a crop to load live ML predictions, yield forecasts & weather correlations</p>
+    <div class="row g-3" id="cropSel"></div>
+  </div>
+
+  <!-- ── KPI METRICS ────────────────────────────────────── -->
+  <div class="row g-3 mb-4 fade-up" id="kpiRow" style="animation-delay:.08s"></div>
+
+  <!-- ── 10-DAY FORECAST ───────────────────────────────── -->
+  <div class="glass p-4 mb-4 fade-up" style="animation-delay:.13s">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+      <div>
+        <div class="section-tag"><span class="glow-dot"></span> ML Forecast Engine</div>
+        <h6 style="font-weight:800;margin:0;font-size:15px;">10-Day Yield Impact Forecast</h6>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px;">AI-predicted crop performance · Click any day card for details</div>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;">
+        <span class="chip" style="background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.25);">● Excellent ≥80%</span>
+        <span class="chip" style="background:rgba(134,239,172,.1);color:#86efac;border:1px solid rgba(134,239,172,.25);">● Good ≥65%</span>
+        <span class="chip" style="background:rgba(245,158,11,.1);color:var(--amber);border:1px solid rgba(245,158,11,.25);">● Moderate ≥50%</span>
+        <span class="chip" style="background:rgba(239,68,68,.1);color:var(--red);border:1px solid rgba(239,68,68,.25);">● Poor &lt;50%</span>
+      </div>
+    </div>
+    <div id="fcTimeline" style="display:flex;gap:9px;overflow-x:auto;padding-bottom:8px;"></div>
+    <div id="fcDetail" style="display:none;margin-top:12px;padding:14px;border-radius:11px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);animation:fadeIn .25s ease;"></div>
+  </div>
+
+  <!-- ── COMPARISON + CORRELATION ──────────────────────── -->
+  <div class="row g-4 mb-4">
+
+    <!-- Crop Comparison Slider -->
+    <div class="col-lg-6 fade-up" style="animation-delay:.18s">
+      <div class="glass p-4 h-100">
+        <div class="section-tag"><span class="glow-dot"></span> Side-by-Side Comparison</div>
+        <h6 style="font-weight:800;font-size:15px;margin-bottom:3px;">Crop Comparison Slider</h6>
+        <p style="font-size:11px;color:var(--muted);margin-bottom:13px;">Drag the white handle to reveal and compare two crops</p>
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <select id="cropA" class="form-select form-select-sm" style="background:rgba(255,255,255,.06);border:1px solid rgba(34,197,94,.3);color:#ecfdf5;border-radius:8px;font-size:12px;">
+            <option value="wheat">🌾 Wheat</option>
+            <option value="rice">🌿 Rice</option>
+            <option value="cotton">🌸 Cotton</option>
+            <option value="sugarcane">🎋 Sugarcane</option>
+            <option value="maize">🌽 Maize</option>
+          </select>
+          <div style="padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.06);font-size:11px;font-weight:800;color:var(--muted);white-space:nowrap;">VS</div>
+          <select id="cropB" class="form-select form-select-sm" style="background:rgba(255,255,255,.06);border:1px solid rgba(245,158,11,.35);color:#ecfdf5;border-radius:8px;font-size:12px;">
+            <option value="rice">🌿 Rice</option>
+            <option value="wheat">🌾 Wheat</option>
+            <option value="cotton">🌸 Cotton</option>
+            <option value="sugarcane">🎋 Sugarcane</option>
+            <option value="maize">🌽 Maize</option>
+          </select>
+        </div>
+        <div class="cmp-wrap" id="cmpWrap">
+          <div id="cmpPanelB" style="position:absolute;inset:0;"></div>
+          <div id="cmpPanelA" style="position:absolute;inset:0;clip-path:inset(0 50% 0 0);"></div>
+          <div id="cmpHandle"></div>
+        </div>
+        <div style="text-align:center;font-size:10px;color:#374151;margin-top:6px;">← Drag the handle left or right to compare →</div>
+      </div>
+    </div>
+
+    <!-- Soil Moisture × Weather Correlation -->
+    <div class="col-lg-6 fade-up" style="animation-delay:.23s">
+      <div class="glass p-4 h-100">
+        <div class="section-tag"><span class="glow-dot"></span> Correlation Analysis</div>
+        <h6 style="font-weight:800;font-size:15px;margin-bottom:3px;">Soil Moisture × Weather × Yield</h6>
+        <p style="font-size:11px;color:var(--muted);margin-bottom:10px;">12-month correlation between field conditions and crop performance index</p>
+        <div style="position:relative;height:220px;"><canvas id="corrChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── HEATMAP + ML INSIGHTS ─────────────────────────── -->
+  <div class="row g-4 mb-4">
+
+    <!-- District Yield Heatmap -->
+    <div class="col-lg-7 fade-up" style="animation-delay:.27s">
+      <div class="glass p-4">
+        <div class="section-tag"><span class="glow-dot"></span> Geospatial Yield Map</div>
+        <h6 style="font-weight:800;font-size:15px;margin-bottom:3px;">Punjab District Yield Heatmap</h6>
+        <p style="font-size:11px;color:var(--muted);margin-bottom:14px;">Predicted yield (t/ha) by district · Hover for details · Red=Low, Green=High</p>
+        <div id="heatmap" style="display:grid;gap:7px;"></div>
+        <div class="d-flex align-items-center gap-2 mt-3" style="font-size:10px;color:var(--muted);">
+          <span>Low Yield</span>
+          <div style="flex:1;height:7px;border-radius:4px;background:linear-gradient(90deg,rgba(239,68,68,.7),rgba(245,158,11,.7),rgba(34,197,94,.85));"></div>
+          <span>High Yield</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ML Insights -->
+    <div class="col-lg-5 fade-up" style="animation-delay:.32s">
+      <div class="glass p-4 h-100 d-flex flex-column">
+        <div class="section-tag"><span class="glow-dot"></span> AI Recommendations</div>
+        <h6 style="font-weight:800;font-size:15px;margin-bottom:12px;">ML Model Insights</h6>
+        <div id="insights" style="flex:1;"></div>
+        <div style="padding:12px;border-radius:11px;background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.16);margin-top:12px;">
+          <div style="font-size:11px;font-weight:800;color:var(--green);margin-bottom:10px;">📊 Model Confidence Breakdown</div>
+          <div id="confBars"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── HISTORICAL TREND CHART ────────────────────────── -->
+  <div class="glass p-4 mb-4 fade-up" style="animation-delay:.37s">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+      <div>
+        <div class="section-tag"><span class="glow-dot"></span> Historical Analysis</div>
+        <h6 style="font-weight:800;font-size:15px;margin:0;">5-Year Yield vs Weather Trend</h6>
+        <p style="font-size:11px;color:var(--muted);margin-top:2px;margin-bottom:0;">Annual crop performance correlated with temperature & rainfall — click to switch view</p>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;" id="viewBtns">
+        <button class="view-btn active" onclick="setView('yield')" id="vb-yield">📊 Yield</button>
+        <button class="view-btn" onclick="setView('temp')"  id="vb-temp">🌡 Temperature</button>
+        <button class="view-btn" onclick="setView('rain')"  id="vb-rain">💧 Rainfall</button>
+        <button class="view-btn" type="button" onclick="downloadAnalysisReport('weather')">⬇ CSV Report</button>
+        <button class="view-btn" type="button" onclick="downloadAnalysisReport('predictions')">⬇ Predictions</button>
+        <button class="view-btn" type="button" onclick="exportReportHtml('weather')">📄 PDF Report</button>
+      </div>
+    </div>
+    <div style="position:relative;height:200px;"><canvas id="histChart"></canvas></div>
+  </div>
+
+</div><!-- /container -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/auth-guard.js"></script>
+<script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+<script src="js/analysis.js"></script>
+<script>const st=document.getElementById("sidebarToggle");const sb=document.getElementById("sidebar");const ov=document.getElementById("sidebarOverlay");st.addEventListener("click",()=>{st.classList.toggle("open");sb.classList.toggle("mobile-open");ov.classList.toggle("active");});ov.addEventListener("click",()=>{st.classList.remove("open");sb.classList.remove("mobile-open");ov.classList.remove("active");});</script>
+<script src="js/config.js"></script>
+  <script src="js/preferences.js"></script>
+</body>
+</html>

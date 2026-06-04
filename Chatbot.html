@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Critical: width=device-width stops mobile browsers from scaling down -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/Chatbot.css">
+  <style>
+    @media(min-width:769px){ .nav-a{ display:flex !important; } .nav-hamburger{ display:none !important; } }
+    @media(max-width:768px){ .nav-a{ display:none !important; } .nav-hamburger{ display:flex !important; } }
+  </style>
+  <title>AgroInsight</title>
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+<!-- Overlay for mobile sidebar -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- ════════════════════════ APP ════════════════════════ -->
+<div class="app">
+
+  <!-- ══════ SIDEBAR ══════ -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-inner">
+
+      <!-- Logo -->
+      <div class="logo-row">
+        <div class="logo-icon">🌾</div>
+        <div>
+          <div class="logo-text">AgriWeather AI</div>
+          <div class="logo-sub">Gemini-Powered Assistant</div>
+        </div>
+      </div>
+
+      <!-- Quick Prompts -->
+      <div class="prompts-section">
+        <div class="section-title">🌾 Crop Questions</div>
+        <button class="prompt-chip" onclick="usePrompt(this.dataset.q)" data-q="What is the best time to sow wheat in Punjab, Pakistan?"><span class="chip-icon">🌾</span>Best time to sow wheat in Punjab?</button>
+        <button class="prompt-chip" onclick="usePrompt(this.dataset.q)" data-q="How does temperature affect rice yield in Pakistan?"><span class="chip-icon">🌡️</span>Temperature effect on rice yield?</button>
+        <button class="prompt-chip" onclick="usePrompt(this.dataset.q)" data-q="What are the signs of drought stress in cotton crops?"><span class="chip-icon">🌸</span>Signs of drought stress in cotton?</button>
+        <button class="prompt-chip" onclick="usePrompt(this.dataset.q)" data-q="How much rainfall does sugarcane need per season?"><span class="chip-icon">🎋</span>Sugarcane water requirements?</button>
+        <button class="prompt-chip" onclick="usePrompt(this.dataset.q)" data-q="How can I protect maize from hailstorm damage?"><span class="chip-icon">🌽</span>Protect maize from hailstorm?</button>
+
+        <div class="section-title mt-3">⛈ Weather &amp; Alerts</div>
+        <button class="prompt-chip" onclick="usePrompt(this.dataset.q)" data-q="What precautions should farmers take during a heatwave?"><span class="chip-icon">🌡️</span>Heatwave precautions for farmers</button>
+        <button class="prompt-chip" onclick="usePrompt(this.dataset.q)" data-q="How does flooding affect crop yield and soil quality?"><span class="chip-icon">🌊</span>Flood impact on crops &amp; soil</button>
+        <button class="prompt-chip" onclick="usePrompt(this.dataset.q)" data-q="What is the best irrigation schedule for wheat during dry weather?"><span class="chip-icon">💧</span>Wheat irrigation schedule</button>
+
+        <div class="section-title mt-3">📊 Economics</div>
+        <button class="prompt-chip" onclick="usePrompt(this.dataset.q)" data-q="How do weather patterns affect wheat market prices in Pakistan?"><span class="chip-icon">📈</span>Weather impact on wheat prices</button>
+        <button class="prompt-chip" onclick="usePrompt(this.dataset.q)" data-q="What government subsidies are available for flood-affected farmers in Pakistan?"><span class="chip-icon">🏛️</span>Subsidies for flood-hit farmers</button>
+      </div>
+
+      <!-- Footer -->
+      <div class="sidebar-footer">
+        <button class="clear-btn" onclick="clearChat()"><i class="fa fa-trash-can"></i> Clear Conversation</button>
+        <div style="font-size:9px;color:#1f2937;text-align:center;margin-top:8px;">Powered by Google Gemini 1.5 Flash</div>
+      </div>
+    </div>
+  </div><!-- /sidebar -->
+
+  <!-- ══════ MAIN CHAT ══════ -->
+  <div class="chat-main">
+
+    <!-- ── Header ── -->
+    <div class="chat-header">
+
+      <!-- Sidebar toggle (always visible) -->
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+        <i class="fa fa-bars"></i>
+      </button>
+
+      <!-- Bot identity -->
+      <div class="bot-avatar">🤖</div>
+      <div class="header-info">
+        <div class="bot-name">AgriWeather Assistant</div>
+        <div class="bot-status"><span class="status-dot"></span> Online · Gemini 1.5 Flash</div>
+      </div>
+
+      <!-- Desktop navigation (hidden ≤768px, shown via .nav-a flex) -->
+      <div class="nav-a" id="desktopNav">
+        <div class="nav-menu">
+          <a class="active" href="Index.html">Home</a>
+          <a href="features.html">Features</a>
+          <a href="Contact.html">Contact</a>
+        </div>
+        <div class="nav-right">
+          <button class="btn-nav-ghost" onclick="window.location.href='About.html'">About Us</button>
+          <button class="btn-nav-fill"  onclick="window.location.href='logout.html'">LogOut</button>
+        </div>
+      </div>
+
+      <!-- Mobile nav hamburger (visible ≤768px) -->
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation menu">
+        <i class="fa fa-ellipsis-v"></i>
+      </button>
+
+      <!-- Header action icons -->
+      <div class="header-actions">
+        <button class="icon-btn" title="Export chat" onclick="exportChat()"><i class="fa fa-download"></i></button>
+        <button class="icon-btn" title="Clear chat"  onclick="clearChat()"><i class="fa fa-rotate-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Mobile nav dropdown (injected below header, absolutely positioned) -->
+    <div class="nav-dropdown" id="navDropdown">
+      <a class="active" href="Index.html">🏠 Home</a>
+      <a href="features.html">✨ Features</a>
+      <a href="Contact.html">📬 Contact</a>
+      <div class="nav-dropdown-btns">
+        <button class="btn-nav-ghost" onclick="window.location.href='About.html'">About Us</button>
+        <button class="btn-nav-fill"  onclick="window.location.href='logout.html'">LogOut</button>
+      </div>
+    </div>
+
+    <!-- No-API banner (hidden by default) -->
+
+    <!-- ── Messages ── -->
+    <div class="messages-wrap" id="messagesWrap">
+
+      <!-- Welcome screen -->
+      <div class="welcome" id="welcomeScreen">
+        <div class="welcome-icon">🌾</div>
+        <div class="welcome-title">AgriWeather AI Assistant</div>
+        <div class="welcome-sub">Your intelligent farming companion powered by <strong style="color:var(--green)">Google Gemini</strong>. Ask anything about crops, weather impact, irrigation, market prices, and disaster preparedness.</div>
+        <div class="welcome-chips">
+          <button class="wchip" onclick="usePrompt('What crops should I plant in June in Faisalabad?')">🌾 What to plant in June?</button>
+          <button class="wchip" onclick="usePrompt('How does rainfall affect wheat yield in Punjab?')">🌧 Rainfall &amp; wheat yield</button>
+          <button class="wchip" onclick="usePrompt('What are the signs of nitrogen deficiency in rice?')">🌿 Nitrogen deficiency in rice</button>
+          <button class="wchip" onclick="usePrompt('How to protect cotton crop from Pink Bollworm?')">🌸 Fight pink bollworm</button>
+          <button class="wchip" onclick="usePrompt('Explain the economic impact of droughts on Punjab farmers')">📉 Drought economic impact</button>
+          <button class="wchip" onclick="usePrompt('What is the best fertilizer schedule for sugarcane?')">🎋 Sugarcane fertilizer plan</button>
+        </div>
+      </div>
+
+    </div><!-- /messages-wrap -->
+
+    <!-- ── Input ── -->
+    <div class="input-area">
+      <div class="input-wrap">
+        <textarea
+          id="msgInput"
+          class="msg-input"
+          rows="1"
+          placeholder="Ask about crops, weather, irrigation, market prices…"
+          onkeydown="handleKey(event)"
+          oninput="autoResize(this)"
+          autocomplete="off"
+          autocorrect="off"
+          spellcheck="true"
+        ></textarea>
+        <button class="send-btn" id="sendBtn" onclick="sendMessage()" disabled aria-label="Send message">
+          <i class="fa fa-paper-plane"></i>
+        </button>
+      </div>
+      <div class="input-hint">
+        <i class="fa fa-keyboard" style="margin-right:4px;"></i>
+        Press <kbd style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:3px;padding:1px 5px;font-size:9px;">Enter</kbd> to send
+        &nbsp;·&nbsp;
+        <kbd style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:3px;padding:1px 5px;font-size:9px;">Shift+Enter</kbd> for new line
+      </div>
+    </div>
+
+  </div><!-- /chat-main -->
+</div><!-- /app -->
+
+<!-- ════════════════════════ JS ════════════════════════ -->
+<script src="js/auth-guard.js"></script>
+<script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+<script src="js/chatbot.js"></script>
+
+<script>
+/* ─────────────────────────────────────────────
+   Sidebar + overlay  (unified, no duplicate listeners)
+───────────────────────────────────────────── */
+const sidebar        = document.getElementById('sidebar');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
+const sidebarToggle  = document.getElementById('sidebarToggle');
+
+function isMobile(){ return window.innerWidth <= 768; }
+
+function openSidebar(){
+  if(isMobile()){
+    sidebar.classList.add('mobile-open');
+    sidebarOverlay.classList.add('active');
+  } else {
+    sidebar.classList.remove('collapsed');
+  }
+}
+function closeSidebar(){
+  if(isMobile()){
+    sidebar.classList.remove('mobile-open');
+    sidebarOverlay.classList.remove('active');
+  } else {
+    sidebar.classList.add('collapsed');
+  }
+}
+
+// Sidebar toggle — single listener, replaces both onclick + addEventListener
+sidebarToggle.addEventListener('click', function(e){
+  e.stopPropagation();
+  if(isMobile()){
+    const isOpen = sidebar.classList.contains('mobile-open');
+    isOpen ? closeSidebar() : openSidebar();
+  } else {
+    const isCollapsed = sidebar.classList.contains('collapsed');
+    isCollapsed ? openSidebar() : closeSidebar();
+  }
+});
+
+// Close sidebar when overlay is tapped
+sidebarOverlay.addEventListener('click', closeSidebar);
+
+// On resize: cleanup mobile classes if user widens window
+window.addEventListener('resize', function(){
+  if(!isMobile()){
+    sidebar.classList.remove('mobile-open');
+    sidebarOverlay.classList.remove('active');
+    navDropdown.classList.remove('open');
+  }
+});
+
+/* ─────────────────────────────────────────────
+   Mobile nav dropdown
+───────────────────────────────────────────── */
+const navHamburger = document.getElementById('navHamburger');
+const navDropdown  = document.getElementById('navDropdown');
+
+navHamburger.addEventListener('click', function(e){
+  e.stopPropagation();
+  navDropdown.classList.toggle('open');
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(e){
+  if(!navDropdown.contains(e.target) && e.target !== navHamburger){
+    navDropdown.classList.remove('open');
+  }
+});
+
+// Close dropdown on link/button click inside it
+navDropdown.addEventListener('click', function(){
+  navDropdown.classList.remove('open');
+});
+</script>
+
+<script src="js/config.js"></script>
+  <script src="js/preferences.js"></script>
+</body>
+</html>

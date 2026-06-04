@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroInsight — Settings</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/Settings.css">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar"><span></span><span></span><span></span></button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<div class="app">
+
+  <!-- ══════════════ SIDEBAR ══════════════ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="logo">
+      <div class="logo-box">🌾</div>
+      <div class="logo-text" id="logoText">
+        <h2>AgroInsight</h2>
+        <p>Farm Intelligence</p>
+      </div>
+    </div>
+
+    <nav>
+      <button class="nav-btn" onclick="window.location.href='Weather.html'">
+        <i data-lucide="home"></i><span>Dashboard</span>
+      </button>
+      <button class="nav-btn" onclick="window.location.href='Analysis.html'">
+        <i data-lucide="leaf"></i><span>Crop Analysis</span>
+      </button>
+      <button class="nav-btn" onclick="window.location.href='Alert.html'">
+        <i data-lucide="alert-triangle"></i><span>Disaster Alerts</span>
+      </button>
+      <button class="nav-btn" onclick="window.location.href='Economi.html'">
+        <i data-lucide="dollar-sign"></i><span>Economic Impact</span>
+      </button>
+      <button class="nav-btn" onclick="window.location.href='Chatbot.html'">
+        <i data-lucide="bot"></i><span>Chatbot</span>
+      </button>
+      <button class="nav-btn active">
+        <i data-lucide="settings"></i><span>Settings</span>
+      </button>
+    </nav>
+
+    <button class="toggle-btn" id="toggleBtn">
+      <i data-lucide="menu"></i>
+    </button>
+  </aside>
+
+  <!-- ══════════════ MAIN ══════════════ -->
+  <main class="main">
+
+    <!-- ── Page Header ── -->
+    <div class="page-header fade-up">
+      <div class="page-title-block">
+        <div class="page-icon">⚙️</div>
+        <div>
+          <div class="page-title">Settings</div>
+          <div class="page-sub">Manage your profile, preferences, and account security</div>
+        </div>
+      </div>
+      <button class="btn-save" id="btnSave">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/>
+          <polyline points="17 21 17 13 7 13 7 21"/>
+          <polyline points="7 3 7 8 15 8"/>
+        </svg>
+        Save All Changes
+      </button>
+    </div>
+
+    <!-- ══════════ SETTINGS GRID ══════════ -->
+    <div class="settings-grid">
+
+      <!-- ── 1. PROFILE ── -->
+      <div class="s-card glass">
+        <div class="s-card-header">
+          <div class="s-card-icon" style="background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.25);">👤</div>
+          <div>
+            <div class="s-card-title">Profile Information</div>
+            <div class="s-card-desc">Your personal details and farm location</div>
+          </div>
+        </div>
+
+        <!-- Avatar block -->
+        <div class="avatar-row">
+          <div class="avatar-circle" id="avatarInitials">U</div>
+          <div class="avatar-info">
+            <div class="avatar-name"  id="avatarName">Loading…</div>
+            <div class="avatar-email" id="avatarEmail"></div>
+            <span class="avatar-role" id="avatarRole">farmer</span>
+          </div>
+          <div style="font-size:10px;color:var(--muted);text-align:right;">
+            Member since<br>
+            <span id="memberSince" style="color:#9ca3af;">—</span>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">Full Name</div>
+            <div class="field-sub">Displayed across the dashboard</div>
+          </div>
+          <div class="field-ctrl">
+            <input id="fieldName" class="s-input" type="text" placeholder="Your name" autocomplete="name">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">Email Address</div>
+            <div class="field-sub">Used for login and alerts</div>
+          </div>
+          <div class="field-ctrl">
+            <input id="fieldEmail" class="s-input" type="email" readonly
+                   style="opacity:.5;cursor:not-allowed;" title="Email cannot be changed">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">Farm Region / District</div>
+            <div class="field-sub">Used as default location for weather and alerts</div>
+          </div>
+          <div class="field-ctrl">
+            <input id="fieldRegion" class="s-input" type="text" placeholder="e.g. Faisalabad">
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 2. SECURITY ── -->
+      <div class="s-card glass">
+        <div class="s-card-header">
+          <div class="s-card-icon" style="background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.25);">🔒</div>
+          <div>
+            <div class="s-card-title">Security & Password</div>
+            <div class="s-card-desc">Change your password or clear all sessions</div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">Current Password</div>
+            <div class="field-sub">Required to set a new password</div>
+          </div>
+          <div class="field-ctrl">
+            <div class="pw-wrap">
+              <input id="fieldCurrentPwd" class="s-input" type="password"
+                     placeholder="Current password" autocomplete="current-password">
+              <button id="btnToggleCurPwd" class="pw-eye" type="button">👁</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">New Password</div>
+            <div class="field-sub">Minimum 6 characters</div>
+          </div>
+          <div class="field-ctrl">
+            <div class="pw-wrap">
+              <input id="fieldNewPwd" class="s-input" type="password"
+                     placeholder="New password" autocomplete="new-password">
+              <button id="btnToggleNewPwd" class="pw-eye" type="button">👁</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">Confirm New Password</div>
+            <div class="field-sub">Must match the new password</div>
+          </div>
+          <div class="field-ctrl">
+            <div class="pw-wrap">
+              <input id="fieldConfirmPwd" class="s-input" type="password"
+                     placeholder="Confirm password" autocomplete="new-password">
+              <button id="btnToggleCnfPwd" class="pw-eye" type="button">👁</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">Session Timeout</div>
+            <div class="field-sub">Auto-logout after inactivity</div>
+          </div>
+          <div class="field-ctrl">
+            <select id="prefTimeout" class="s-select">
+              <option value="30">30 minutes</option>
+              <option value="60" selected>1 hour</option>
+              <option value="120">2 hours</option>
+              <option value="480">8 hours</option>
+              <option value="1440">24 hours</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">Active Sessions</div>
+            <div class="field-sub">Sign out of all devices immediately</div>
+          </div>
+          <div class="field-ctrl">
+            <button class="btn-danger" id="btnLogoutAll">🚪 Logout All Sessions</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 3. ALERT PREFERENCES ── -->
+      <div class="s-card glass">
+        <div class="s-card-header">
+          <div class="s-card-icon" style="background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.25);">🔔</div>
+          <div>
+            <div class="s-card-title">Alert Preferences</div>
+            <div class="s-card-desc">Choose how and which alerts you receive</div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">Email Notifications</div>
+            <div class="field-sub">Receive alerts in your inbox</div>
+          </div>
+          <div class="field-ctrl">
+            <label class="toggle">
+              <input type="checkbox" id="togAlertEmail">
+              <span class="toggle-track"></span>
+              <span class="toggle-thumb"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field-row" style="flex-direction:column;align-items:stretch;">
+          <div style="display:flex;justify-content:space-between;align-items:center;width:100%;">
+            <div>
+              <div class="field-label">SMS Notifications</div>
+              <div class="field-sub">Receive disaster alerts via SMS (Pakistan +92…)</div>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="togAlertSms">
+              <span class="toggle-track"></span>
+              <span class="toggle-thumb"></span>
+            </label>
+          </div>
+          <input id="prefPhone" class="s-input" type="tel" placeholder="+923001234567" style="margin-top:8px;">
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">🌊 Flood Alerts</div>
+            <div class="field-sub">Flash flood and river-level warnings</div>
+          </div>
+          <div class="field-ctrl">
+            <label class="toggle">
+              <input type="checkbox" id="togAlertFlood" checked>
+              <span class="toggle-track"></span>
+              <span class="toggle-thumb"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">🏜️ Drought Alerts</div>
+            <div class="field-sub">Water shortage and dry spell warnings</div>
+          </div>
+          <div class="field-ctrl">
+            <label class="toggle">
+              <input type="checkbox" id="togAlertDrought" checked>
+              <span class="toggle-track"></span>
+              <span class="toggle-thumb"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">🌡️ Heatwave Alerts</div>
+            <div class="field-sub">Extreme temperature warnings</div>
+          </div>
+          <div class="field-ctrl">
+            <label class="toggle">
+              <input type="checkbox" id="togAlertHeat" checked>
+              <span class="toggle-track"></span>
+              <span class="toggle-thumb"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">🐛 Pest & Disease Alerts</div>
+            <div class="field-sub">Locust swarms and crop disease warnings</div>
+          </div>
+          <div class="field-ctrl">
+            <label class="toggle">
+              <input type="checkbox" id="togAlertPest" checked>
+              <span class="toggle-track"></span>
+              <span class="toggle-thumb"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 4. DASHBOARD DEFAULTS ── -->
+      <div class="s-card glass">
+        <div class="s-card-header">
+          <div class="s-card-icon" style="background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.25);">📊</div>
+          <div>
+            <div class="s-card-title">Dashboard Defaults</div>
+            <div class="s-card-desc">Startup location and crop — used by all pages</div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">Default City / District</div>
+            <div class="field-sub">Used on Weather, Analysis, and Alert pages</div>
+          </div>
+          <div class="field-ctrl">
+            <input id="prefCity" class="s-input" type="text" placeholder="e.g. Faisalabad">
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">Default Crop</div>
+            <div class="field-sub">Pre-selected on Analysis and ML pages</div>
+          </div>
+          <div class="field-ctrl">
+            <select id="prefCropId" class="s-select">
+              <!-- Populated from DB via settings.js → getCrops() -->
+              <option value="1">🌾 Wheat</option>
+              <option value="2">🌿 Rice</option>
+              <option value="3">🌸 Cotton</option>
+              <option value="4">🎋 Sugarcane</option>
+              <option value="5">🌽 Maize</option>
+              <option value="6">🥔 Potato</option>
+              <option value="7">🧅 Onion</option>
+              <option value="8">🥭 Mango</option>
+              <option value="9">🍅 Tomato</option>
+              <option value="10">🫘 Chickpea</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">Theme</div>
+            <div class="field-sub">Interface color scheme</div>
+          </div>
+          <div class="field-ctrl">
+            <select id="prefTheme" class="s-select">
+              <option value="dark"  selected>🌑 Dark (default)</option>
+              <option value="light">☀️ Light</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">Language</div>
+            <div class="field-sub">Dashboard display language</div>
+          </div>
+          <div class="field-ctrl">
+            <select id="prefLang" class="s-select">
+              <option value="en"  selected>🇬🇧 English</option>
+              <option value="ur">🇵🇰 اردو (Urdu)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 5. PRIVACY & DATA ── -->
+      <div class="s-card glass">
+        <div class="s-card-header">
+          <div class="s-card-icon" style="background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.25);">🛡️</div>
+          <div>
+            <div class="s-card-title">Privacy & Data</div>
+            <div class="s-card-desc">Control how your data is stored and used</div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">Save Weather History</div>
+            <div class="field-sub">Log your location weather lookups to the DB for trend analysis</div>
+          </div>
+          <div class="field-ctrl">
+            <label class="toggle">
+              <input type="checkbox" id="togPrivacy" checked>
+              <span class="toggle-track"></span>
+              <span class="toggle-thumb"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">Export My Data</div>
+            <div class="field-sub">Download your profile and preferences as JSON</div>
+          </div>
+          <div class="field-ctrl">
+            <button class="btn-danger" id="btnExport"
+                    style="border-color:rgba(96,165,250,.4);background:rgba(96,165,250,.08);color:#60a5fa;">
+              📥 Export JSON
+            </button>
+          </div>
+        </div>
+
+        <div style="margin-top:14px;padding:12px;border-radius:10px;
+                    background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.2);">
+          <div style="font-size:11px;color:#fbbf24;font-weight:700;margin-bottom:5px;">📌 Data stored on this server</div>
+          <div style="font-size:10px;color:#6b7280;line-height:1.55;">
+            Your weather logs, crop predictions, and alerts are stored in the local MySQL database.
+            No data is sent to third parties except OpenWeather API (city name only) and
+            Google Gemini API (chatbot messages only).
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 6. DANGER ZONE ── -->
+      <div class="s-card glass danger-zone">
+        <div class="s-card-header">
+          <div class="s-card-icon" style="background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);">⚠️</div>
+          <div>
+            <div class="s-card-title">Danger Zone</div>
+            <div class="s-card-desc">Irreversible actions — proceed with caution</div>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">Clear Weather History</div>
+            <div class="field-sub">Delete all your stored weather logs (cannot be undone)</div>
+          </div>
+          <div class="field-ctrl">
+            <button class="btn-danger" onclick="clearWeatherHistory()">🗑 Clear Logs</button>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <div class="field-label">Clear Prediction History</div>
+            <div class="field-sub">Delete all saved ML crop risk predictions</div>
+          </div>
+          <div class="field-ctrl">
+            <button class="btn-danger" onclick="clearPredictionHistory()">🗑 Clear Predictions</button>
+          </div>
+        </div>
+
+        <div class="field-row" style="border-bottom:none;">
+          <div>
+            <div class="field-label" style="color:#ef4444;">Delete Account</div>
+            <div class="field-sub">Permanently delete your account and all data</div>
+          </div>
+          <div class="field-ctrl">
+            <button class="btn-danger" onclick="deleteAccount()">💀 Delete Account</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /settings-grid -->
+
+  </main>
+</div>
+
+<!-- ── TOAST ── -->
+<div id="toast"></div>
+
+<!-- ── SCRIPTS ── -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="js/config.js"></script>
+  <script src="js/preferences.js"></script>
+<script src="js/auth-guard.js"></script>
+<script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+<script src="js/settings.js"></script>
+<script>
+  // Danger zone actions (inline — simple confirm + API call)
+  async function clearWeatherHistory() {
+    if (!confirm('Delete ALL your weather logs? This cannot be undone.')) return;
+    try {
+      await apiPost('/user/clear_data.php', { type: 'weather_logs' });
+      showToast('Weather history cleared.', 'success');
+    } catch (e) { showToast(e.message, 'error'); }
+  }
+
+  async function clearPredictionHistory() {
+    if (!confirm('Delete ALL your prediction history? This cannot be undone.')) return;
+    try {
+      await apiPost('/user/clear_data.php', { type: 'predictions' });
+      showToast('Prediction history cleared.', 'success');
+    } catch (e) { showToast(e.message, 'error'); }
+  }
+
+  async function deleteAccount() {
+    const confirm1 = confirm('⚠️ This will permanently delete your account and ALL data.\nThis CANNOT be undone.\n\nAre you absolutely sure?');
+    if (!confirm1) return;
+    const confirm2 = prompt('Type DELETE to confirm:');
+    if (confirm2 !== 'DELETE') {
+      showToast('Account deletion cancelled.', 'error');
+      return;
+    }
+    try {
+      await apiPost('/user/delete_account.php', {});
+      localStorage.removeItem('user');
+      showToast('Account deleted. Redirecting…', 'error');
+      setTimeout(() => { window.location.href = 'login.html'; }, 2000);
+    } catch (e) { showToast(e.message, 'error'); }
+  }
+</script>
+
+<script>const st=document.getElementById("sidebarToggle");const sb=document.getElementById("sidebar");const ov=document.getElementById("sidebarOverlay");st.addEventListener("click",()=>{st.classList.toggle("open");sb.classList.toggle("mobile-open");ov.classList.toggle("active");});ov.addEventListener("click",()=>{st.classList.remove("open");sb.classList.remove("mobile-open");ov.classList.remove("active");});</script>
+</body>
+</html>

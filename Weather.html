@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/Weather.css">
+    <title>AgroInsight — Weather Dashboard</title>
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar"><span></span><span></span><span></span></button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="logo">
+      <div class="logo-box">🌾</div>
+
+      <div class="logo-text" id="logoText">
+        <h2>AgroInsight</h2>
+        <p>Impact Analytics</p>
+      </div>
+    </div>
+  
+
+    <nav>
+      <button class="nav-btn mobile-only" onclick="window.location.href='Index.html'">
+  <i data-lucide="home"></i>
+  <span>Home</span>
+</button>
+
+<button class="nav-btn mobile-only" onclick="window.location.href='features.html'">
+  <i data-lucide="layout-grid"></i>
+  <span>Features</span>
+</button>
+
+<button class="nav-btn mobile-only" onclick="window.location.href='Contact.html'">
+  <i data-lucide="phone"></i>
+  <span>Contact</span>
+</button>
+
+<button class="nav-btn mobile-only" onclick="window.location.href='About.html'">
+  <i data-lucide="info"></i>
+  <span>About Us</span>
+</button>
+      <button class="nav-btn active">
+        <i data-lucide="home"></i>
+        <span>Dashboard</span>
+      </button>
+
+      <button class="nav-btn" onclick="window.location.href='Analysis.html'">
+        <i data-lucide="leaf"></i>
+        <span>Crop Analysis</span>
+      </button>
+
+      <button class="nav-btn" onclick="window.location.href='Alert.html'">
+        <i data-lucide="alert-triangle"></i>
+        <span>Disaster Alerts</span>
+      </button>
+
+      <button class="nav-btn" onclick="window.location.href='Economi.html'">
+        <i data-lucide="dollar-sign"></i>
+        <span>Economic Impact</span>
+      </button>
+
+      <button class="nav-btn" onclick="window.location.href='Chatbot.html'">
+        <i data-lucide="bot"></i>
+        <span>Chatbot</span>
+      </button>
+
+      <button class="nav-btn" onclick="window.location.href='Settings.html'">
+        <i data-lucide="activity"></i>
+        <span>Settings</span>
+      </button>
+
+      <button class="nav-btn" id="adminNavLink" data-admin-only style="display:none;" onclick="window.location.href='admin/index.html'">
+        <i data-lucide="shield"></i>
+        <span>Admin</span>
+      </button>
+    </nav>
+     
+    <button class="toggle-btn" id="toggleBtn">
+      <i data-lucide="menu"></i>
+    </button>
+
+  </aside>
+
+
+  <!-- MAIN -->
+  <main class="main">
+  <div class="nav-a">
+      <div class="nav-menu">
+    <a class="active" href="Index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="Contact.html">Contact</a>
+      </div>
+      <div class="nav-right">
+    <button class="btn-nav-ghost" onclick="window.location.href='About.html'">About Us</button>
+    <button class="btn-nav-fill" onclick="window.location.href='logout.html'">Logout</button>
+    </div>
+  
+  </div>
+<br>
+      <!-- SEARCH BAR -->
+<div class="top-search">
+
+  <div class="search-box">
+
+    <i data-lucide="search"></i>
+
+    <input
+      type="text"
+      id="cityInput"
+      placeholder="Search any city weather..."
+    />
+
+    <button id="searchBtn">
+      Search
+    </button>
+
+  </div>
+
+</div>
+    <!-- HEADER -->
+    <header class="header">
+
+      <div>
+        <div class="location">
+          <i data-lucide="map-pin"></i>
+          <span>Faisalabad, Punjab, Pakistan</span>
+        </div>
+
+        <p class="update-time">
+          Updated: <span id="time"></span>
+        </p>
+      </div>
+
+      <div class="header-right">
+
+        <button class="refresh-btn" id="refreshBtn">
+          <i data-lucide="refresh-cw" id="refreshIcon"></i>
+          Refresh
+        </button>
+
+        <div class="alert-box">
+          <div class="dot"></div>
+          3 Alerts Active
+        </div>
+
+        <div class="avatar">A</div>
+
+      </div>
+
+    </header>
+
+
+    <!-- KPI CARDS -->
+    <section class="kpi-grid">
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <p>Temperature</p>
+            <h2 id="temp">38°C</h2>
+          </div>
+
+          <div class="icon orange">
+            <i data-lucide="thermometer"></i>
+          </div>
+        </div>
+
+        <span>Feels like 42°C</span>
+
+        <div class="progress">
+          <div class="bar orange-bar"></div>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <p>Humidity</p>
+            <h2 id="humidity">58%</h2>
+          </div>
+
+          <div class="icon blue">
+            <i data-lucide="droplets"></i>
+          </div>
+        </div>
+
+        <span>Dew point: 22°C</span>
+
+        <div class="progress">
+          <div class="bar blue-bar"></div>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <p>Rainfall</p>
+            <h2 id="rain" >8.2 mm</h2>
+          </div>
+
+          <div class="icon purple">
+            <i data-lucide="cloud-rain"></i>
+          </div>
+        </div>
+
+        <span>Heavy expected 3PM–7PM</span>
+
+        <div class="progress">
+          <div class="bar purple-bar"></div>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <p>Wind Speed</p>
+            <h2 id="wind">14 km/h</h2>
+          </div>
+
+          <div class="icon green">
+            <i data-lucide="wind"></i>
+          </div>
+        </div>
+
+        <span>Direction: NE ↗</span>
+
+        <div class="progress">
+          <div class="bar green-bar"></div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- MAP + RIGHT -->
+    <section class="middle-grid">
+
+      <!-- MAP -->
+      <div class="glass map-card">
+
+        <div class="section-header">
+          <div>
+            <h3>Pakistan District Weather Map</h3>
+            <p>Live temperature & risk overlay</p>
+          </div>
+        </div>
+
+        <div class="map">
+            <div class="pakistan-shape">
+          <div class="city green" style="top:50px; left:230px;">
+            <span>30°C</span>
+            <small>Peshawar</small>
+          </div>
+
+          <div class="city orange" style="top:160px; left:286px;">
+            <span>38°C</span>
+            <small>Faisalabad</small>
+          </div>
+
+          <div class="city red" style="top:224px; left:262px;">
+            <span>41°C</span>
+            <small>Multan</small>
+          </div>
+
+          <div class="city red" style="top:272px; left:170px;">
+            <span>44°C</span>
+            <small>Sukkur</small>
+          </div>
+
+          <div class="city orange" style="top:162px; left:328px;">
+            <span>36°C</span>
+            <small>Lahore</small>
+          </div>
+
+        </div>
+
+      </div>
+        </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="right-column">
+
+        <!-- AQI -->
+        <div class="glass right-card">
+
+          <div class="title-row">
+            <i data-lucide="eye"></i>
+            <h3>Air Quality Index</h3>
+          </div>
+
+          <div class="aqi-top">
+            <h1>142</h1>
+            <span>Unhealthy</span>
+          </div>
+
+          <div class="aqi-bar"></div>
+
+          <div class="aqi-grid">
+            <div>
+              <p>PM2.5</p>
+              <h4>78 µg</h4>
+            </div>
+
+            <div>
+              <p>PM10</p>
+              <h4>142 µg</h4>
+            </div>
+
+            <div>
+              <p>NO₂</p>
+              <h4>28 ppb</h4>
+            </div>
+
+            <div>
+              <p>O₃</p>
+              <h4>55 ppb</h4>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- CONDITIONS -->
+        <div class="glass right-card conditions">
+
+          <div class="title-row">
+            <i data-lucide="zap"></i>
+            <h3>Current Conditions</h3>
+          </div>
+
+          <div class="weather-icon">⛅</div>
+            <h2 id="condition">Partly Cloudy</h2>
+            <p id="feelsLike">Feels like 42°C · UV Index 8</p>
+          <div class="warning yellow">
+            ⚡ Thunderstorm risk today 4PM–7PM
+          </div>
+
+          <div class="warning red-bg">
+            🌡 Heatwave advisory through Wednesday
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CHARTS -->
+    <section class="charts-grid">
+
+      <div class="glass chart-card">
+        <h3>24-Hour Temperature</h3>
+        <div style="position:relative;height:260px;">
+          <canvas id="tempChart" style="display:block;"></canvas>
+        </div>
+      </div>
+
+      <div class="glass chart-card">
+        <h3>Weekly Forecast</h3>
+        <div style="position:relative;height:260px;">
+          <canvas id="forecastChart" style="display:block;"></canvas>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ALERT TICKER -->
+    <section class="ticker glass">
+
+      <div class="live">⚠ LIVE ALERTS</div>
+
+      <div class="marquee">
+        <div class="track">
+          🌧 Heavy Rainfall Warning — Multan & Bahawalpur &nbsp;&nbsp; • &nbsp;&nbsp;
+          🌡 Heatwave Alert: Sukkur forecast 47°C on Sunday &nbsp;&nbsp; • &nbsp;&nbsp;
+          🌪 Strong Winds expected tonight &nbsp;&nbsp; • &nbsp;&nbsp;
+          🌾 Advisory: Delay wheat harvest in Faisalabad division until Friday
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/auth-guard.js"></script>
+<script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+<script src="js/weather.js"></script>
+<script>const st=document.getElementById("sidebarToggle");const sb=document.getElementById("sidebar");const ov=document.getElementById("sidebarOverlay");st.addEventListener("click",()=>{st.classList.toggle("open");sb.classList.toggle("mobile-open");ov.classList.toggle("active");});ov.addEventListener("click",()=>{st.classList.remove("open");sb.classList.remove("mobile-open");ov.classList.remove("active");});</script>
+<script src="js/config.js"></script>
+  <script src="js/preferences.js"></script>
+</body>
+</html>

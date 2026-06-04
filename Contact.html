@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Contact.css">
+    <title>AgroInsight — Contact</title>
+</head>
+<body>
+    <nav class="nav">
+  <div class="nav-logo">
+    <div class="logo-mark">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M10 2C10 2 5.5 7 5.5 11.5C5.5 14 7.5 16 10 16C12.5 16 14.5 14 14.5 11.5C14.5 7 10 2 10 2Z" fill="white"/>
+        <line x1="10" y1="7" x2="10" y2="16" stroke="#28a745" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="7.5" y1="11" x2="10" y2="8" stroke="#28a745" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="12.5" y1="11" x2="10" y2="8" stroke="#28a745" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <span class="brand"><em>Agro</em>Insight</span>
+  </div>
+  <div class="nav-menu">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a class="active" href="contact.html">Contact</a>
+  </div>
+  <div class="nav-right">
+    <button class="btn-nav-ghost" onclick="window.location.href='about.html'">About Us</button>
+    <button class="btn-nav-fill" onclick="window.location.href='logout.html'">Logout</button>
+  </div>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <a href="Index.html">Home</a>
+  <a href="features.html">Features</a>
+  <a href="Contact.html" class="active">Contact</a>
+  <div class="nav-drawer-btns">
+    <button class="btn-nav-ghost" onclick="window.location.href='About.html'">About Us</button>
+    <button class="btn-nav-fill" onclick="window.location.href='logout.html'">Logout</button>
+  </div>
+</div>
+<script>
+  const ham = document.getElementById('navHamburger');
+  const drawer = document.getElementById('navDrawer');
+  ham.addEventListener('click', () => { ham.classList.toggle('open'); drawer.classList.toggle('open'); });
+</script>
+
+<!-- ======= CONTACT PAGE ======= -->
+<div id="contact" class="page">
+<section class="contact-hero">
+  <div class="ch-deco">
+    <div style="position:absolute;left:50%;top:50%;width:600px;height:600px;border-radius:50%;border:1px solid rgba(40,167,69,.06);transform:translate(-50%,-50%);"></div>
+    <div style="position:absolute;left:50%;top:50%;width:350px;height:350px;border-radius:50%;border:1px solid rgba(40,167,69,.1);transform:translate(-50%,-50%);"></div>
+  </div>
+  <div class="hero-badge" style="margin-bottom:18px;"><div class="pulse"></div>We respond within 24 hours</div>
+  <h1 style="font-size:44px;font-weight:800;color:#fff;margin-bottom:14px;letter-spacing:-1px;position:relative;z-index:2;">Get in <span style="color:#5cd47a;">touch</span></h1>
+  <p style="font-size:15px;color:#7aaa82;max-width:480px;margin:0 auto 28px;line-height:1.8;position:relative;z-index:2;">Share your queries, suggestions, or collaboration ideas. Whether you are a farmer, student, researcher, or policymaker — your input shapes AgroInsight.</p>
+  <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2;">
+    <div class="pill" style="background:rgba(40,167,69,.1);border-color:rgba(40,167,69,.2);"><div class="pill-dot" style="background:#28a745;"></div>Farmers welcome</div>
+    <div class="pill" style="background:rgba(40,167,69,.1);border-color:rgba(40,167,69,.2);"><div class="pill-dot" style="background:#64b5f6;"></div>Researchers</div>
+    <div class="pill" style="background:rgba(40,167,69,.1);border-color:rgba(40,167,69,.2);"><div class="pill-dot" style="background:#EF9F27;"></div>Policymakers</div>
+    <div class="pill" style="background:rgba(40,167,69,.1);border-color:rgba(40,167,69,.2);"><div class="pill-dot" style="background:#AFA9EC;"></div>Students</div>
+  </div>
+</section>
+
+<section class="contact-body">
+  <div class="cb-left">
+    <div class="eyebrow">Contact info</div>
+    <h2 class="section-h2" style="font-size:26px;margin-bottom:24px;">Connect with<br>the <span>AgroInsight</span> team</h2>
+    <div class="cb-info-cards">
+      <div class="cic">
+        <div class="cic-icon" style="background:#e8f7ea;">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="4" width="16" height="11" rx="2" stroke="#28a745" stroke-width="1.3"/><path d="M1 6.5L9 11L17 6.5" stroke="#28a745" stroke-width="1.2"/></svg>
+        </div>
+        <div><div class="cic-title">Email us</div><div class="cic-val">agriweather@uaf.edu.pk</div></div>
+      </div>
+      <div class="cic">
+        <div class="cic-icon" style="background:#e8f7ea;">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 1.5C6 1.5 3.5 4 3.5 7C3.5 11.5 9 16.5 9 16.5C9 16.5 14.5 11.5 14.5 7C14.5 4 12 1.5 9 1.5Z" stroke="#28a745" stroke-width="1.3"/><circle cx="9" cy="7" r="2" fill="#28a745"/></svg>
+        </div>
+        <div><div class="cic-title">Find us</div><div class="cic-val">Dept of Computer Science<br>University of Agriculture, Faisalabad<br>Punjab, Pakistan</div></div>
+      </div>
+      <div class="cic">
+        <div class="cic-icon" style="background:#e8f7ea;">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="2" width="14" height="14" rx="3" stroke="#28a745" stroke-width="1.3"/><line x1="2" y1="7" x2="16" y2="7" stroke="#28a745" stroke-width="1"/><line x1="6" y1="2" x2="6" y2="7" stroke="#28a745" stroke-width="1"/><line x1="12" y1="2" x2="12" y2="7" stroke="#28a745" stroke-width="1"/></svg>
+        </div>
+        <div><div class="cic-title">Office hours</div><div class="cic-val">Monday – Friday, 9am – 5pm PKT<br>Response within 24 hours</div></div>
+      </div>
+      <div class="cic">
+        <div class="cic-icon" style="background:#e8f7ea;">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#28a745" stroke-width="1.3"/><path d="M9 5V9.5L12 11.5" stroke="#28a745" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </div>
+        <div><div class="cic-title">Supervisor</div><div class="cic-val">Dr. Syed Mushhad Mustuzhar Gilani<br>BS Software Engineering · UAF</div></div>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="tc-head">Project team</div>
+      <div class="team-member">
+        <div class="tm-avatar" style="background:rgba(40,167,69,.2);color:#5cd47a;">MK</div>
+        <div><div class="tm-name">Masooma Khatoon</div><div class="tm-id">2022-ag-8011 · BS Software Engineering</div></div>
+      </div>
+      <div class="team-member">
+        <div class="tm-avatar" style="background:rgba(100,181,246,.15);color:#64b5f6;">AK</div>
+        <div><div class="tm-name">Abiha Khalil</div><div class="tm-id">2022-ag-8006 · BS Software Engineering</div></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="form-card">
+      <div class="fc-title">Send a message</div>
+      <p class="fc-sub">Fill in the form below and we'll get back to you as soon as possible. All feedback helps us improve AgroInsight for Pakistan's farming community.</p>
+      <div class="form-row2">
+        <div class="fg2"><label>First name</label><input type="text" placeholder="e.g. Masooma"></div>
+        <div class="fg2"><label>Last name</label><input type="text" placeholder="e.g. Khatoon"></div>
+      </div>
+      <div class="fg2"><label>Email address</label><input type="email" placeholder="your@email.com"></div>
+      <div class="fg2"><label>Phone (optional)</label><input type="tel" placeholder="+92 300 0000000"></div>
+      <div class="fg2"><label>You are a...</label>
+        <select>
+          <option value="">Select your role</option>
+          <option>Farmer</option>
+          <option>Agricultural Researcher</option>
+          <option>Student</option>
+          <option>Policymaker / Government</option>
+          <option>Developer / Collaborator</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="fg2"><label>Subject</label><input type="text" placeholder="e.g. Suggestion for cotton analysis module"></div>
+      <div class="fg2"><label>Your message</label><textarea placeholder="Share your query, feedback, feature suggestion, or collaboration idea..."></textarea></div>
+      <button class="submit-btn">Send message →</button>
+      <p class="form-note">Your information is kept strictly private and used only to respond to your message.</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="faq-header">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="section-h2" style="font-size:28px;">Frequently asked <span>questions</span></h2>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <div class="faq-q">Is AgroInsight free to use?</div>
+      <div class="faq-a">Yes — AgroInsight is a final year research project developed at UAF Faisalabad. The platform is currently free for all registered users including farmers, students, and researchers.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Which crops are supported?</div>
+      <div class="faq-a">Currently over 10 crops are supported including wheat, rice, cotton, sugarcane, maize, and others. We plan to expand coverage with each development increment.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How accurate are the AI predictions?</div>
+      <div class="faq-a">Our machine learning models achieve 80%+ precision on short-term (10–30 day) crop yield forecasts, trained on historical Punjab weather and agricultural data.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How fast are disaster alerts delivered?</div>
+      <div class="faq-a">Disaster alerts are delivered in under 10 seconds via the dashboard and optionally via SMS, giving farmers critical time to act before extreme weather events strike.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I download weather reports?</div>
+      <div class="faq-a">Yes. The platform allows users to generate and download weather impact reports as PDFs for offline reference, sharing with other farmers, or presenting to stakeholders.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How can I collaborate or contribute data?</div>
+      <div class="faq-a">We welcome contributions from researchers, agricultural organizations, and developers. Use the contact form above or reach out directly to the project team at UAF.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner" style="padding:72px 44px;">
+  <div class="cta-bg"><div class="cta-glow1"></div></div>
+  <div class="cta-inner">
+    <div class="cta-eyebrow">Start today</div>
+    <h2 class="cta-h2">Explore the full<br>feature platform</h2>
+    <p class="cta-p">See all 5 modules — weather data, crop analysis, AI prediction, disaster alerts, and economic visualization — in one place.</p>
+    <div class="cta-btns">
+      <button class="btn-cta-main" onclick="window.location.href='features.html'">Explore features</button>
+      <button class="btn-cta-ghost" onclick="window.location.href='index.html'">Back to home</button>
+    </div>
+  </div>
+</section>
+
+</div><!-- end contact -->
+
+<!-- FOOTER (on all pages) -->
+<footer class="footer">
+  <div class="footer-main">
+    <div>
+      <div class="fm-brand"><em>Agro</em>Insight</div>
+      <p class="fm-desc">A final year BS Software Engineering project combining real-time weather data, machine learning, and agricultural analytics — designed to support Pakistan's farming community at the University of Agriculture, Faisalabad.</p>
+      <div class="fm-social">
+        <div class="social-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="10" height="10" rx="3" stroke="#3d6e45" stroke-width="1.2"/><circle cx="7" cy="7" r="2.5" stroke="#3d6e45" stroke-width="1.2"/><circle cx="10.2" cy="3.8" r=".8" fill="#3d6e45"/></svg></div>
+        <div class="social-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 3L6.5 7L2 11H3.5L7 8.5L10.5 11H12L7.5 7L12 3H10.5L7 5.5L3.5 3Z" fill="#3d6e45"/></svg></div>
+        <div class="social-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2H5.5L7 6L5.5 7.5C6.2 9 6.5 9.5 8 10.5L9.5 9L12 10.5V12C9 13 2 10 2 2Z" stroke="#3d6e45" stroke-width="1.2" fill="none" stroke-linejoin="round"/></svg></div>
+      </div>
+    </div>
+    <div class="fc">
+      <h4>Platform</h4>
+      <a onclick="window.location.href='index.html'">Home</a>
+      <a onclick="window.location.href='features.html'">Features</a>
+      <a onclick="window.location.href='contact.html'">Contact</a>
+    </div>
+    <div class="fc">
+      <h4>Modules</h4>
+      <a>Weather data</a>
+      <a>Crop analysis</a>
+      <a>AI predictions</a>
+      <a>Disaster alerts</a>
+      <a>Economic reports</a>
+    </div>
+    <div class="fc">
+      <h4>Project</h4>
+      <a>About AgroInsight</a>
+      <a>Research report</a>
+      <a>UAF — CS Dept</a>
+      <a>Methodology</a>
+      <a>Timeline</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="fb-copy">© 2025 AgroInsight · University of Agriculture, Faisalabad · BS Software Engineering</span>
+    <div class="fb-pills">
+      <span class="fbp">PHP</span>
+      <span class="fbp">Python</span>
+      <span class="fbp">MySQL</span>
+      <span class="fbp">Scikit-learn</span>
+    </div>
+  </div>
+</footer>
+<!-- CHATBOT BUTTON -->
+   
+   <a href="Chatbot.html" class="chatbot-btn">
+   <i data-lucide="message-square">🤖</i>
+</a>
+
+    
+<script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="css/signup.css">
+<link rel="stylesheet" href="css/responsive-shared.css">
+<title>Create Account — AgroInsight</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-logo" href="#">
+     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M10 2C10 2 5.5 7 5.5 11.5C5.5 14 7.5 16 10 16C12.5 16 14.5 14 14.5 11.5C14.5 7 10 2 10 2Z" fill="white"/>
+        <line x1="10" y1="7" x2="10" y2="16" stroke="#28a745" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="7.5" y1="11" x2="10" y2="8" stroke="#28a745" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="12.5" y1="11" x2="10" y2="8" stroke="#28a745" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    <span class="brand">Agro<em>Insight</em></span>
+  </a>
+  <a class="back-link" href="login.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><polyline points="15,18 9,12 15,6"/></svg>
+    Already have an account? Sign In
+  </a>
+</nav>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+    <div class="left-deco">
+      <div class="deco-circle1"></div>
+      <div class="deco-circle2"></div>
+      <div class="deco-circle3"></div>
+    </div>
+    <div style="position:relative;z-index:2;">
+      <div class="lp-badge"><span class="pulse"></span> Free to Get Started</div>
+      <h1 class="lp-h1">Start farming<br>smarter with<br><span class="g">AgriSmart</span></h1>
+      <p class="lp-p">Join thousands of farmers already using AI-powered insights to grow better crops, save water, and boost yields.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-line">
+            <div class="step-num">1</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-body">
+            <h4>Create your free account</h4>
+            <p>Takes less than 2 minutes. No credit card needed.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-line">
+            <div class="step-num">2</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-body">
+            <h4>Set up your farm profile</h4>
+            <p>Tell us your crop types, land size, and location.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-line">
+            <div class="step-num">3</div>
+            <div class="step-connector"></div>
+          </div>
+          <div class="step-body">
+            <h4>Get live insights instantly</h4>
+            <p>Weather alerts, soil reports, and AI recommendations.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-line">
+            <div class="step-num">4</div>
+          </div>
+          <div class="step-body">
+            <h4>Watch your yields improve</h4>
+            <p>Track progress and optimize every season.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lp-trust">
+        <div class="avatars">
+          <div class="av" style="background:#28a745;">AK</div>
+          <div class="av" style="background:#1d7a36;">MR</div>
+          <div class="av" style="background:#145c28;">FS</div>
+          <div class="av" style="background:#0d3b1a;">+</div>
+        </div>
+        <div class="trust-text">
+          <strong>12,400+ farmers registered</strong>
+          <span>Average yield improved by 34%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right-panel">
+    <div class="form-card">
+      <div class="fc-header">
+        <h2 class="fc-title">Create your account</h2>
+        <p class="fc-sub">Already have one? <a href="login.html">Sign in here</a></p>
+      </div>
+
+      <!-- PLAN TOGGLE -->
+      <div class="plan-toggle">
+        <div class="plan-opt active" onclick="setPlan(this,'farmer')">🌾 &nbsp;Farmer</div>
+        <div class="plan-opt" onclick="setPlan(this,'business')">🏢 &nbsp;Agri Business</div>
+      </div>
+
+      <form onsubmit="return false;">
+
+        <!-- Name Row -->
+        <div class="row-2">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <div class="input-wrap">
+              <svg class="inp-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <input class="form-input" type="text" id="firstName" placeholder="Ahmad">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <div class="input-wrap">
+              <svg class="inp-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <input class="form-input" type="text" id="lastName" placeholder="Khan">
+            </div>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <div class="input-wrap">
+            <svg class="inp-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <input class="form-input" type="email" id="signupEmail" placeholder="you@example.com">
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <div class="input-wrap">
+            <svg class="inp-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.09a16 16 0 006 6l.66-.66a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <input class="form-input" type="tel" placeholder="+92 300 0000000">
+          </div>
+        </div>
+
+        <!-- Farm Location + Size -->
+        <div class="row-2">
+          <div class="form-group">
+            <label class="form-label">City / District</label>
+            <div class="input-wrap">
+              <svg class="inp-icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <input class="form-input" type="text" id="region" placeholder="Faisalabad">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Farm Size</label>
+            <div class="input-wrap">
+              <svg class="inp-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <select class="form-input" style="padding-left:40px;">
+                <option value="" disabled selected>Select acres</option>
+                <option>Under 5 acres</option>
+                <option>5 – 20 acres</option>
+                <option>20 – 50 acres</option>
+                <option>50 – 100 acres</option>
+                <option>100+ acres</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Primary Crop -->
+        <div class="form-group">
+          <label class="form-label">Primary Crop</label>
+          <div class="input-wrap">
+            <svg class="inp-icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <select class="form-input" style="padding-left:40px;">
+              <option value="" disabled selected>What do you grow?</option>
+              <option>Wheat (Gandum)</option>
+              <option>Rice (Chawal)</option>
+              <option>Cotton (Kapas)</option>
+              <option>Sugarcane (Ganna)</option>
+              <option>Maize (Makka)</option>
+              <option>Vegetables</option>
+              <option>Fruits</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <div class="input-wrap">
+            <svg class="inp-icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            <input class="form-input" type="password" id="pwdInput" placeholder="Min. 8 characters" oninput="checkStrength(this.value)">
+          </div>
+          <div class="strength-bar">
+            <div class="sb-seg" id="s1"></div>
+            <div class="sb-seg" id="s2"></div>
+            <div class="sb-seg" id="s3"></div>
+            <div class="sb-seg" id="s4"></div>
+          </div>
+          <div class="strength-label" id="strengthLabel">Enter a password</div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+          <label class="form-label">Confirm Password</label>
+          <div class="input-wrap">
+            <svg class="inp-icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            <input class="form-input" type="password" id="confirmPwd" placeholder="Repeat your password">
+          </div>
+        </div>
+
+        <!-- Terms -->
+        <div class="terms-row">
+          <input type="checkbox" id="terms">
+          <label for="terms">I agree to AgriSmart's <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. I consent to receiving farming tips and alerts.</label>
+        </div>
+
+        <button class="btn-create" type="submit" id="signupBtn">Create My Free Account</button>
+
+        <div class="divider"><span>or sign up with</span></div>
+
+        <div class="social-btns">
+          <button class="btn-social" type="button">
+            <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            Google
+          </button>
+          <button class="btn-social" type="button">
+            <svg viewBox="0 0 24 24" fill="#1877F2" width="16" height="16"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </button>
+        </div>
+
+        <!-- Perks -->
+        <div class="perks">
+          <div class="perk">✓ Free forever plan</div>
+          <div class="perk">✓ No credit card</div>
+          <div class="perk">✓ Cancel anytime</div>
+          <div class="perk">✓ Urdu support</div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer-strip">
+  <span class="fs-copy">© 2025 AgriSmart. All rights reserved.</span>
+  <div class="fs-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#">Support</a>
+  </div>
+</footer>
+<script src="js/signup.js"></script>
+<script src="js/responsive.js"></script>
+</body>
+</html>

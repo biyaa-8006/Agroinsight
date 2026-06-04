@@ -1,0 +1,130 @@
+/**
+ * AgroInsight — Theme Overrides
+ * ─────────────────────────────
+ * Loaded on every authenticated page AFTER the page-specific CSS.
+ * The default (dark) values are defined in each page's own CSS
+ * using :root { }.  This file adds the LIGHT theme override layer
+ * via [data-theme="light"] on <html>, and RTL adjustments for Urdu.
+ *
+ * data-theme is toggled by preferences.js / settings.js.
+ */
+
+/* ══════════════════════════════════════════════════════════════
+   LIGHT THEME
+   ══════════════════════════════════════════════════════════════ */
+[data-theme="light"] {
+    --bg:     #f0faf4;
+    --green:  #16a34a;
+    --amber:  #d97706;
+    --red:    #dc2626;
+    --blue:   #2563eb;
+    --text:   #0f172a;
+    --muted:  #64748b;
+    --card:   rgba(0, 0, 0, 0.04);
+    --border: rgba(0, 0, 0, 0.10);
+}
+
+[data-theme="light"] body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* Sidebar */
+[data-theme="light"] .sidebar {
+    background: rgba(240, 250, 244, 0.97);
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Cards */
+[data-theme="light"] .card,
+[data-theme="light"] .stat-card,
+[data-theme="light"] .info-card,
+[data-theme="light"] .weather-card,
+[data-theme="light"] .alert-card,
+[data-theme="light"] .section-card {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Inputs and selects */
+[data-theme="light"] input,
+[data-theme="light"] select,
+[data-theme="light"] textarea {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: var(--text);
+}
+
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+    color: var(--muted);
+}
+
+/* Navigation buttons */
+[data-theme="light"] .nav-btn {
+    color: var(--text);
+}
+
+[data-theme="light"] .nav-btn:hover,
+[data-theme="light"] .nav-btn.active {
+    background: rgba(22, 163, 74, 0.12);
+    color: var(--green);
+}
+
+/* Charts — give them a white background so axis labels are readable */
+[data-theme="light"] canvas {
+    filter: brightness(0.97);
+}
+
+/* Top bar */
+[data-theme="light"] .topbar,
+[data-theme="light"] .header,
+[data-theme="light"] .page-header {
+    background: rgba(240, 250, 244, 0.95);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+/* Muted text */
+[data-theme="light"] .muted,
+[data-theme="light"] [class*="muted"] {
+    color: var(--muted);
+}
+
+/* Badge / pill */
+[data-theme="light"] .badge {
+    background: rgba(22, 163, 74, 0.12);
+    color: var(--green);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RTL SUPPORT FOR URDU  (dir="rtl" set on <html> by preferences.js)
+   ══════════════════════════════════════════════════════════════ */
+[dir="rtl"] .sidebar {
+    border-right: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="light"][dir="rtl"] .sidebar {
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[dir="rtl"] .app {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .main-content,
+[dir="rtl"] .page-content {
+    text-align: right;
+}
+
+[dir="rtl"] .card,
+[dir="rtl"] .stat-card {
+    text-align: right;
+}
+
+/* Toast */
+[dir="rtl"] #toast {
+    left: 1.5rem;
+    right: auto;
+}

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/Alert.css">
+    <title>Agrointellent</title>
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+
+<!-- Mobile Sidebar Toggle -->
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar"><span></span><span></span><span></span></button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="logo">
+      <div class="logo-box">🌾</div>
+
+      <div class="logo-text" id="logoText">
+        <h2>AgroInsight</h2>
+        <p>Impact Analytics</p>
+      </div>
+    </div>
+  
+    <nav>
+      <button class="nav-btn" onclick="window.location.href='Weather.html'">
+        <i data-lucide="home"></i>
+        <span>Dashboard</span>
+      </button>
+
+      <button class="nav-btn "  onclick="window.location.href='Analysis.html'">
+        <i data-lucide="leaf"></i>
+        <span>Crop Analysis</span>
+      </button>
+
+      <button class="nav-btn active">
+        <i data-lucide="alert-triangle"></i>
+        <span>Disaster Alerts</span>
+      </button>
+
+      <button class="nav-btn" onclick="window.location.href='Economi.html'">
+        <i data-lucide="dollar-sign"></i>
+        <span>Economic Impact</span>
+      </button>
+
+      <button class="nav-btn" onclick="window.location.href='Chatbot.html'">
+        <i data-lucide="bot"></i>
+        <span>Chatbot</span>
+      </button>
+
+      <button class="nav-btn" onclick="window.location.href='Settings.html'">
+        <i data-lucide="activity"></i>
+        <span>Settings</span>
+      </button>
+    </nav>
+
+    <button class="toggle-btn" id="toggleBtn">
+      <i data-lucide="menu"></i>
+    </button>
+
+  </aside>
+   <!-- MAIN -->
+  <main class="main">
+  <div class="nav-a">
+      <div class="nav-menu">
+    <a class="active" href="Index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="Contact.html">Contact</a>
+      </div>
+      <div class="nav-right">
+    <button class="btn-nav-ghost" onclick="window.location.href='About.html'">About Us</button>
+    <button class="btn-nav-fill" onclick="window.location.href='logout.html'">Logout</button>
+    </div>
+
+  </div>
+  <br>
+<!-- ── HEADER ───────────────────────────────────────────────── -->
+<div class="mod-header">
+  <div class="mod-icon">⚠️</div>
+  <div>
+    <div style="font-size:10px;color:#4b5563;">AgriWeather › Module 3</div>
+    <div style="font-size:14px;font-weight:800;">Disaster Alerts &amp; Warnings</div>
+  </div>
+  <div class="live-badge ms-2"><span class="live-dot"></span> LIVE MONITORING</div>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+    <span id="lastUpdate" style="font-size:10px;color:#374151;">Updated: <span id="clockVal"></span></span>
+    <span style="background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);color:#ef4444;padding:3px 11px;border-radius:20px;font-size:10px;font-weight:700;">🔴 5 Critical Alerts</span>
+    <span style="background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3);color:var(--amber);padding:3px 11px;border-radius:20px;font-size:10px;font-weight:700;">⚠️ 3 Regions Affected</span>
+  </div>
+</div>
+
+<!-- ── ALERT TICKER ──────────────────────────────────────────── -->
+<div class="ticker-bar">
+  <div class="ticker-label">⚡ BREAKING</div>
+  <div class="ticker-text">
+    🌊 CRITICAL: Flash flood warning issued for Multan, DG Khan &amp; Rahim Yar Khan — evacuate low-lying areas immediately &nbsp;&nbsp;·&nbsp;&nbsp;
+    🌡️ HEATWAVE: Sukkur temperature forecast 48°C Thursday — extreme danger for outdoor workers &nbsp;&nbsp;·&nbsp;&nbsp;
+    🏜️ DROUGHT: Level-3 drought declared in Balochistan — crop loss exceeding 60% in affected zones &nbsp;&nbsp;·&nbsp;&nbsp;
+    ⛈ STORM: Severe thunderstorm warning for Peshawar &amp; Swat — wind speed 80km/h expected tonight &nbsp;&nbsp;·&nbsp;&nbsp;
+    🌾 ADVISORY: Delay wheat harvest in southern Punjab until rainfall subsides
+  </div>
+</div>
+
+<div style="padding:20px;max-width:1400px;margin:0 auto;">
+
+  <!-- ── SEVERITY SUMMARY CARDS ──────────────────────────── -->
+  <div class="row g-3 mb-4 fade-up">
+    <div class="col-6 col-md-3">
+      <div class="sev-card sev-critical">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#ef4444;">🌊 Flood Alerts</div>
+          <span class="pulse-dot" style="color:#ef4444;background:#ef4444;"></span>
+        </div>
+        <div class="sev-num" style="color:#ef4444;">5</div>
+        <div style="font-size:10px;color:#6b7280;margin-top:6px;">4 Critical · 1 High</div>
+        <div class="prog-bar mt-2"><div class="prog-fill" style="background:#ef4444;--w:80%;" data-w="80%"></div></div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="sev-card sev-high">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#f97316;">🌡️ Heatwaves</div>
+          <span class="pulse-dot" style="color:#f97316;background:#f97316;"></span>
+        </div>
+        <div class="sev-num" style="color:#f97316;">3</div>
+        <div style="font-size:10px;color:#6b7280;margin-top:6px;">2 Extreme · 1 Severe</div>
+        <div class="prog-bar mt-2"><div class="prog-fill" style="background:#f97316;--w:62%;" data-w="62%"></div></div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="sev-card sev-moderate">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--amber);">🏜️ Droughts</div>
+          <span class="pulse-dot" style="color:var(--amber);background:var(--amber);"></span>
+        </div>
+        <div class="sev-num" style="color:var(--amber);">4</div>
+        <div style="font-size:10px;color:#6b7280;margin-top:6px;">1 Critical · 3 Moderate</div>
+        <div class="prog-bar mt-2"><div class="prog-fill" style="background:var(--amber);--w:70%;" data-w="70%"></div></div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="sev-card sev-low">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;">
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);">⛈ Storms</div>
+          <span class="pulse-dot" style="color:var(--blue);background:var(--blue);"></span>
+        </div>
+        <div class="sev-num" style="color:var(--blue);">2</div>
+        <div style="font-size:10px;color:#6b7280;margin-top:6px;">2 Moderate</div>
+        <div class="prog-bar mt-2"><div class="prog-fill" style="background:var(--blue);--w:35%;" data-w="35%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ALERTS LIST + MAP ────────────────────────────────── -->
+  <div class="row g-4 mb-4">
+
+    <!-- Active Alerts -->
+    <div class="col-lg-6 fade-up" style="animation-delay:.1s">
+      <div class="glass p-4 h-100">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div>
+            <div class="stag stag-red"><span class="live-dot" style="width:5px;height:5px;"></span> Live Alerts</div>
+            <h6 style="font-weight:800;font-size:15px;margin:0;">Active Disaster Warnings</h6>
+          </div>
+          <div style="display:flex;gap:6px;">
+            <button onclick="filterAlerts('all')" id="fa-all" style="padding:4px 11px;border-radius:20px;border:1px solid rgba(239,68,68,.3);background:rgba(239,68,68,.15);color:#ef4444;font-size:10px;cursor:pointer;font-weight:700;">All</button>
+            <button onclick="filterAlerts('flood')" id="fa-flood" style="padding:4px 11px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:10px;cursor:pointer;">🌊</button>
+            <button onclick="filterAlerts('heat')" id="fa-heat" style="padding:4px 11px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:10px;cursor:pointer;">🌡️</button>
+            <button onclick="filterAlerts('drought')" id="fa-drought" style="padding:4px 11px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:10px;cursor:pointer;">🏜️</button>
+            <button type="button" onclick="markAllAlertsRead()" style="padding:4px 11px;border-radius:20px;border:1px solid rgba(34,197,94,.3);background:rgba(34,197,94,.1);color:#86efac;font-size:10px;cursor:pointer;">✓ Read all</button>
+          </div>
+        </div>
+
+        <div id="alertsList" style="max-height:420px;overflow-y:auto;padding-right:4px;"></div>
+        <div id="remindersBlock" style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.06);">
+          <div style="font-size:11px;font-weight:700;color:#86efac;margin-bottom:8px;">📅 Crop activity reminders</div>
+          <div id="remindersList" style="font-size:11px;color:#9ca3af;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Disaster Map -->
+    <div class="col-lg-6 fade-up" style="animation-delay:.15s">
+      <div class="glass p-4 h-100">
+        <div class="stag stag-red"><i class="fa fa-map-location-dot" style="font-size:9px;"></i> Geospatial</div>
+        <h6 style="font-weight:800;font-size:15px;margin-bottom:3px;">Pakistan Disaster Impact Map</h6>
+        <p style="font-size:11px;color:var(--muted);margin-bottom:12px;">Live disaster overlay · Click a marker for district details</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;font-size:10px;">
+          <span style="display:flex;align-items:center;gap:4px;color:#ef4444;"><span style="width:9px;height:9px;border-radius:50%;background:#ef4444;display:inline-block;"></span> Flood</span>
+          <span style="display:flex;align-items:center;gap:4px;color:#f97316;"><span style="width:9px;height:9px;border-radius:50%;background:#f97316;display:inline-block;"></span> Heatwave</span>
+          <span style="display:flex;align-items:center;gap:4px;color:var(--amber);"><span style="width:9px;height:9px;border-radius:50%;background:var(--amber);display:inline-block;"></span> Drought</span>
+          <span style="display:flex;align-items:center;gap:4px;color:var(--blue);"><span style="width:9px;height:9px;border-radius:50%;background:var(--blue);display:inline-block;"></span> Storm</span>
+        </div>
+
+        <div class="map-wrap">
+          <svg id="disasterMap" viewBox="0 0 420 330" style="width:100%;height:270px;">
+            <!-- Grid -->
+            <defs>
+              <radialGradient id="hg" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#f97316" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="fg" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ef4444" stop-opacity="0.22"/>
+                <stop offset="100%" stop-color="#ef4444" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="dg" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <!-- Grid lines -->
+            <g opacity=".04">
+              <line x1="0" y1="60" x2="420" y2="60" stroke="white"/><line x1="0" y1="120" x2="420" y2="120" stroke="white"/>
+              <line x1="0" y1="180" x2="420" y2="180" stroke="white"/><line x1="0" y1="240" x2="420" y2="240" stroke="white"/>
+              <line x1="70" y1="0" x2="70" y2="330" stroke="white"/><line x1="140" y1="0" x2="140" y2="330" stroke="white"/>
+              <line x1="210" y1="0" x2="210" y2="330" stroke="white"/><line x1="280" y1="0" x2="280" y2="330" stroke="white"/>
+              <line x1="350" y1="0" x2="350" y2="330" stroke="white"/>
+            </g>
+            <!-- Pakistan outline -->
+            <path d="M80 62 L118 42 L158 52 L198 28 L248 18 L292 38 L322 58 L352 82 L358 118 L340 148 L352 180 L332 212 L340 242 L308 272 L278 282 L248 302 L198 312 L158 302 L128 280 L100 258 L78 228 L68 200 L58 170 L68 140 L58 110 Z"
+              fill="rgba(34,197,94,0.04)" stroke="rgba(34,197,94,0.18)" stroke-width="1.5"/>
+
+            <!-- Heatwave blobs -->
+            <ellipse cx="172" cy="272" rx="50" ry="40" fill="url(#hg)"/>
+            <ellipse cx="265" cy="225" rx="40" ry="35" fill="url(#fg)"/>
+
+            <!-- Drought blob -->
+            <ellipse cx="118" cy="218" rx="55" ry="45" fill="url(#dg)"/>
+
+            <!-- Disaster markers injected by JS -->
+            <g id="mapMarkers"></g>
+          </svg>
+
+          <!-- District detail popup -->
+          <div id="districtPopup" style="display:none;position:absolute;bottom:10px;right:10px;background:rgba(8,14,11,.9);border:1px solid var(--border);border-radius:12px;padding:12px;min-width:180px;backdrop-filter:blur(12px);animation:fadeUp .2s ease;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SMS NOTIFICATIONS + SAFETY GUIDES ───────────────── -->
+  <div class="row g-4 mb-4">
+
+    <!-- SMS Notification Center -->
+    <div class="col-lg-5 fade-up" style="animation-delay:.2s">
+      <div class="glass p-4 h-100">
+        <div class="stag stag-green"><i class="fa fa-sms" style="font-size:9px;"></i> Notification Center</div>
+        <h6 style="font-weight:800;font-size:15px;margin-bottom:3px;">SMS Alert Dispatcher</h6>
+        <p style="font-size:11px;color:var(--muted);margin-bottom:16px;">Send bulk SMS warnings to farmers in affected districts</p>
+
+        <div class="sms-form" id="smsForm">
+          <div class="row g-2 mb-3">
+            <div class="col-12">
+              <label>Alert Type</label>
+              <select id="alertType" onchange="updateSmsPreview()">
+                <option value="flood">🌊 Flash Flood Warning</option>
+                <option value="heat">🌡️ Extreme Heatwave Alert</option>
+                <option value="drought">🏜️ Drought Emergency</option>
+                <option value="storm">⛈ Severe Storm Warning</option>
+                <option value="evacuation">🚨 Evacuation Order</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label>Target Districts</label>
+              <select id="targetDist" multiple style="height:90px;" onchange="updateSmsPreview()">
+                <option selected>Multan</option><option selected>DG Khan</option>
+                <option>Rahim Yar Khan</option><option>Bahawalpur</option>
+                <option>Muzaffargarh</option><option selected>Sukkur</option>
+                <option>Khanewal</option><option>Lahore</option>
+                <option>Faisalabad</option><option>Peshawar</option>
+                <option>Quetta</option><option>Karachi</option>
+              </select>
+              <small style="color:var(--muted);font-size:9px;">Hold Ctrl/Cmd to select multiple</small>
+            </div>
+            <div class="col-12">
+              <label>Custom Message (optional)</label>
+              <textarea id="customMsg" rows="2" placeholder="Leave blank to use template…" oninput="updateSmsPreview()"></textarea>
+            </div>
+          </div>
+
+          <!-- Preview -->
+          <div style="margin-bottom:12px;">
+            <label>📱 SMS Preview</label>
+            <div class="sms-preview" id="smsPreview">Loading preview…</div>
+            <div class="char-count" id="charCount" style="color:var(--muted);">0 / 160 chars</div>
+          </div>
+
+          <!-- Stats row -->
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px;" id="smsStats">
+            <div style="background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center;">
+              <div style="font-size:16px;font-weight:800;color:var(--green);" id="distCount">3</div>
+              <div style="font-size:9px;color:var(--muted);">Districts</div>
+            </div>
+            <div style="background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center;">
+              <div style="font-size:16px;font-weight:800;color:var(--amber);">14,820</div>
+              <div style="font-size:9px;color:var(--muted);">Farmers</div>
+            </div>
+            <div style="background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:8px;text-align:center;">
+              <div style="font-size:16px;font-weight:800;color:var(--blue);">Urdu</div>
+              <div style="font-size:9px;color:var(--muted);">Language</div>
+            </div>
+          </div>
+
+          <button class="send-sms-btn" onclick="sendSMS()">
+            <i class="fa fa-paper-plane"></i> Send SMS Alert Now
+          </button>
+          <div id="smsResult" style="margin-top:10px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Safety Guidelines -->
+    <div class="col-lg-7 fade-up" style="animation-delay:.25s">
+      <div class="glass p-4 h-100">
+        <div class="stag stag-amber"><i class="fa fa-shield-halved" style="font-size:9px;"></i> Safety Protocol</div>
+        <h6 style="font-weight:800;font-size:15px;margin-bottom:3px;">Emergency Guidelines &amp; Safety Measures</h6>
+        <p style="font-size:11px;color:var(--muted);margin-bottom:14px;">Practical field-tested protocols for each disaster type</p>
+
+        <div class="guide-tabs">
+          <button class="gtab active" onclick="showGuide('flood',this)">🌊 Flood</button>
+          <button class="gtab" onclick="showGuide('heat',this)">🌡️ Heatwave</button>
+          <button class="gtab" onclick="showGuide('drought',this)">🏜️ Drought</button>
+          <button class="gtab" onclick="showGuide('storm',this)">⛈ Storm</button>
+          <button class="gtab" onclick="showGuide('evac',this)">🚨 Evacuation</button>
+        </div>
+
+        <!-- FLOOD -->
+        <div class="guide-panel active" id="guide-flood">
+          <div class="guide-step" style="background:rgba(239,68,68,.06);border-color:rgba(239,68,68,.18);">
+            <div class="step-num" style="background:rgba(239,68,68,.2);color:#ef4444;">1</div>
+            <div><p><strong style="color:#fca5a5;">Immediate Evacuation</strong><br>Move livestock and stored grain to elevated ground within 2 hours of warning. Do not wait for water to reach your field.</p><small>⏱ Do within: 2 hours</small></div>
+          </div>
+          <div class="guide-step" style="background:rgba(239,68,68,.04);border-color:rgba(239,68,68,.12);">
+            <div class="step-num" style="background:rgba(239,68,68,.15);color:#ef4444;">2</div>
+            <div><p><strong style="color:#fca5a5;">Protect Harvested Crops</strong><br>Seal grain bags in waterproof covers. Move stored wheat/rice to rooftops or elevated platforms. Document quantities for insurance claims.</p><small>⏱ Do within: 4 hours</small></div>
+          </div>
+          <div class="guide-step" style="background:rgba(239,68,68,.04);border-color:rgba(239,68,68,.12);">
+            <div class="step-num" style="background:rgba(239,68,68,.15);color:#ef4444;">3</div>
+            <div><p><strong style="color:#fca5a5;">Drainage &amp; Soil Recovery</strong><br>After flood recedes, open irrigation channels for rapid drainage. Apply gypsum (CaSO4) to prevent soil crusting. Do not plant for 15–20 days.</p><small>📅 Post-flood recovery</small></div>
+          </div>
+          <div style="padding:10px 13px;border-radius:9px;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);font-size:11px;color:#fcd34d;display:flex;gap:8px;align-items:flex-start;">
+            <span>💡</span><span><strong>Tip:</strong> Contact NDMA helpline <strong style="color:white;">1700</strong> to register for emergency crop compensation. Keep CNIC and land records ready.</span>
+          </div>
+        </div>
+
+        <!-- HEATWAVE -->
+        <div class="guide-panel" id="guide-heat">
+          <div class="guide-step" style="background:rgba(249,115,22,.06);border-color:rgba(249,115,22,.18);">
+            <div class="step-num" style="background:rgba(249,115,22,.2);color:#f97316;">1</div>
+            <div><p><strong style="color:#fdba74;">Irrigation Adjustment</strong><br>Increase irrigation frequency to every 3–4 days. Water fields early morning (4–7 AM) or late evening (7–10 PM) to minimize evaporation losses by up to 40%.</p><small>🌅 Best time: 4–7 AM daily</small></div>
+          </div>
+          <div class="guide-step" style="background:rgba(249,115,22,.04);border-color:rgba(249,115,22,.12);">
+            <div class="step-num" style="background:rgba(249,115,22,.15);color:#f97316;">2</div>
+            <div><p><strong style="color:#fdba74;">Crop Heat Stress Management</strong><br>Apply potassium nitrate (KNO3) foliar spray — reduces heat stress by 25–30%. Provide temporary shade nets over nurseries and vegetable crops.</p><small>💊 Spray at dusk</small></div>
+          </div>
+          <div class="guide-step" style="background:rgba(249,115,22,.04);border-color:rgba(249,115,22,.12);">
+            <div class="step-num" style="background:rgba(249,115,22,.15);color:#f97316;">3</div>
+            <div><p><strong style="color:#fdba74;">Farmer Safety Protocol</strong><br>No outdoor work between 11 AM – 4 PM. Carry water (2L/hour minimum). Wear light cotton clothing and wide-brim hat. Recognize heat stroke signs: no sweating, confusion, rapid breathing.</p><small>⚠ Danger hours: 11 AM–4 PM</small></div>
+          </div>
+          <div style="padding:10px 13px;border-radius:9px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);font-size:11px;color:#fca5a5;display:flex;gap:8px;">
+            <span>🆘</span><span>Heat stroke emergency: Move victim to shade, wet body with cool water, call <strong style="color:white;">115</strong> (Rescue) immediately.</span>
+          </div>
+        </div>
+
+        <!-- DROUGHT -->
+        <div class="guide-panel" id="guide-drought">
+          <div class="guide-step" style="background:rgba(245,158,11,.06);border-color:rgba(245,158,11,.18);">
+            <div class="step-num" style="background:rgba(245,158,11,.2);color:var(--amber);">1</div>
+            <div><p><strong style="color:#fcd34d;">Water Conservation Priority</strong><br>Switch to drip or furrow irrigation immediately. Implement water rotation schedule among farmers. Prioritize high-value crops (vegetables, cotton) over grain crops.</p><small>💧 Target: 50% water reduction</small></div>
+          </div>
+          <div class="guide-step" style="background:rgba(245,158,11,.04);border-color:rgba(245,158,11,.12);">
+            <div class="step-num" style="background:rgba(245,158,11,.15);color:var(--amber);">2</div>
+            <div><p><strong style="color:#fcd34d;">Drought-Resistant Crop Switch</strong><br>Consider sorghum, millet or guar bean as emergency drought-resistant alternatives. Contact Agriculture Department for drought-tolerant seed varieties at subsidized rates.</p><small>🌱 Seed subsidy: Call 0800-15000</small></div>
+          </div>
+          <div class="guide-step" style="background:rgba(245,158,11,.04);border-color:rgba(245,158,11,.12);">
+            <div class="step-num" style="background:rgba(245,158,11,.15);color:var(--amber);">3</div>
+            <div><p><strong style="color:#fcd34d;">Soil Moisture Retention</strong><br>Apply mulching (dry crop residue) around plant bases — reduces water loss by 35%. Stop all fertilizer applications — drought-stressed crops cannot absorb nutrients effectively.</p><small>📅 Mulch immediately</small></div>
+          </div>
+          <div style="padding:10px 13px;border-radius:9px;background:rgba(96,165,250,.08);border:1px solid rgba(96,165,250,.2);font-size:11px;color:#93c5fd;display:flex;gap:8px;">
+            <span>💡</span><span><strong>Government aid:</strong> Punjab Agriculture Dept drought compensation — register at district office with land records and crop loss estimate.</span>
+          </div>
+        </div>
+
+        <!-- STORM -->
+        <div class="guide-panel" id="guide-storm">
+          <div class="guide-step" style="background:rgba(96,165,250,.06);border-color:rgba(96,165,250,.18);">
+            <div class="step-num" style="background:rgba(96,165,250,.2);color:var(--blue);">1</div>
+            <div><p><strong style="color:#93c5fd;">Pre-Storm Field Preparation</strong><br>Harvest any ripe crops immediately — do not leave standing crops during storm forecast. Tie tall crops (maize, sugarcane) to stakes. Close all irrigation channels to prevent waterlogging.</p><small>⏱ Do 24 hrs before storm</small></div>
+          </div>
+          <div class="guide-step" style="background:rgba(96,165,250,.04);border-color:rgba(96,165,250,.12);">
+            <div class="step-num" style="background:rgba(96,165,250,.15);color:var(--blue);">2</div>
+            <div><p><strong style="color:#93c5fd;">Equipment &amp; Structure Security</strong><br>Store all farm equipment in sheltered areas. Secure tube-well motors and electrical equipment. Remove loose materials that could become projectiles in high winds (&gt;60 km/h).</p><small>🚜 Secure before winds hit</small></div>
+          </div>
+          <div class="guide-step" style="background:rgba(96,165,250,.04);border-color:rgba(96,165,250,.12);">
+            <div class="step-num" style="background:rgba(96,165,250,.15);color:var(--blue);">3</div>
+            <div><p><strong style="color:#93c5fd;">Post-Storm Recovery</strong><br>Check for standing water and create drainage channels. Survey crop damage within 48 hours and photograph for insurance. Report infrastructure damage to local patwari for official record.</p><small>📸 Document everything</small></div>
+          </div>
+          <div style="padding:10px 13px;border-radius:9px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);font-size:11px;color:#fca5a5;display:flex;gap:8px;">
+            <span>⚡</span><span>Lightning danger: Stay away from trees and water during storms. Move to a concrete building. Call <strong style="color:white;">1122</strong> for emergencies.</span>
+          </div>
+        </div>
+
+        <!-- EVACUATION -->
+        <div class="guide-panel" id="guide-evac">
+          <div class="guide-step" style="background:rgba(239,68,68,.06);border-color:rgba(239,68,68,.18);">
+            <div class="step-num" style="background:rgba(239,68,68,.2);color:#ef4444;">1</div>
+            <div><p><strong style="color:#fca5a5;">Evacuation Checklist</strong><br>Take: CNIC, land records, stored cash, 3-day food supply, medicines, mobile phones (fully charged). Move livestock to evacuation centres — government provides transport assistance.</p><small>🎒 Pack in 30 mins max</small></div>
+          </div>
+          <div class="guide-step" style="background:rgba(239,68,68,.04);border-color:rgba(239,68,68,.12);">
+            <div class="step-num" style="background:rgba(239,68,68,.15);color:#ef4444;">2</div>
+            <div><p><strong style="color:#fca5a5;">Designated Relief Camps</strong><br>Go to nearest school, college or government building as designated by district administration. Do NOT return to affected area until official all-clear is given.</p><small>🏕 Follow official routes only</small></div>
+          </div>
+          <div class="guide-step" style="background:rgba(239,68,68,.04);border-color:rgba(239,68,68,.12);">
+            <div class="step-num" style="background:rgba(239,68,68,.15);color:#ef4444;">3</div>
+            <div><p><strong style="color:#fca5a5;">Communication Protocol</strong><br>Register with relief camp authorities immediately. Notify family of your location. Use SMS rather than calls to preserve network capacity during emergencies.</p><small>📱 SMS saves network capacity</small></div>
+          </div>
+          <div style="padding:10px 13px;border-radius:9px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);font-size:11px;color:#86efac;display:flex;gap:8px;">
+            <span>🚨</span><span><strong>Emergency Numbers:</strong> NDMA <strong style="color:white;">1700</strong> · Rescue <strong style="color:white;">1122</strong> · Police <strong style="color:white;">15</strong> · Edhi Foundation <strong style="color:white;">115</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SEVERITY CHART + TIMELINE ────────────────────────────── -->
+  <div class="row g-4 mb-4">
+    <div class="col-lg-5 fade-up" style="animation-delay:.25s">
+      <div class="glass p-4 h-100">
+        <div class="stag stag-red" style="font-size:10px;font-weight:700;margin-bottom:12px;">📊 Distribution</div>
+        <h6 style="font-weight:800;font-size:15px;margin-bottom:14px;">Alert Severity Distribution</h6>
+        <div style="position:relative;height:200px;">
+          <canvas id="sevChart"></canvas>
+        </div>
+      </div>
+    </div>
+     <div class="col-lg-7 fade-up" style="animation-delay:.28s">
+      <div class="glass p-4 h-100">
+      <div class="stag stag-orange"><i class="fa fa-chart-line" style="font-size:9px;"></i> PREDICTIONS</div>
+      <h6 style="font-weight:800;font-size:15px;margin-bottom:3px;">Disaster Predictions (Next 30 Days)</h6>
+      <p style="font-size:11px;color:var(--muted);margin-bottom:14px;">AI-powered predictions based on historical patterns</p>
+      <div id="timeline" style="max-height:320px;overflow-y:auto;padding-right:4px;"></div>
+    </div>
+  </div>
+  </div>
+
+  <!-- ── EMERGENCY CONTACTS ─────────────────────────────────── -->
+  <div class="row g-4 mb-4">
+    <!-- Emergency Contacts -->
+    <div class="col-lg-4 fade-up" style="animation-delay:.3s">
+      <div class="glass p-4">
+        <div class="stag stag-red"><i class="fa fa-phone-volume" style="font-size:9px;"></i> Emergency Lines</div>
+        <h6 style="font-weight:800;font-size:15px;margin-bottom:14px;">Quick Emergency Contacts</h6>
+        <div id="contactsList"></div>
+      </div>
+    </div>
+
+    <!-- Alert History Timeline -->
+     <div class="col-lg-7 fade-up" style="animation-delay:.28s">
+      <div class="glass p-4 h-100">
+        <div class="stag stag-orange"><i class="fa fa-clock-rotate-left" style="font-size:9px;"></i> History</div>
+        <h6 style="font-weight:800;font-size:15px;margin-bottom:14px;">Recent Disaster Timeline</h6>
+        <div id="predictionsList" style="max-height:250px;overflow-y:auto;padding-right:4px;"></div>
+      </div>
+    </div>
+  
+</div>
+
+  </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- ════════════════════ JS ════════════════════ -->
+<!-- FIXED: added Chart.js (required for severity doughnut chart)     -->
+<!-- FIXED: added api.js  (required for getAlerts helper)             -->
+<!-- FIXED: correct load order: lucide → Chart.js → api.js → alert.js-->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/auth-guard.js"></script>
+<script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+<script src="js/alert.js"></script>
+    
+<script>
+const st=document.getElementById("sidebarToggle");
+const sb=document.getElementById("sidebar");
+const ov=document.getElementById("sidebarOverlay");
+st.addEventListener("click",()=>{st.classList.toggle("open");sb.classList.toggle("mobile-open");ov.classList.toggle("active");});
+ov.addEventListener("click",()=>{st.classList.remove("open");sb.classList.remove("mobile-open");ov.classList.remove("active");});
+
+</script>
+<script src="js/config.js"></script>
+  <script src="js/preferences.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# Deny direct access to config and helpers
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^config/ - [F,L]
+  RewriteRule ^helpers/ - [F,L]
+</IfModule>
+
+Options -Indexes

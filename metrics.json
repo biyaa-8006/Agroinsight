@@ -1,0 +1,35 @@
+{
+  "model": "RandomForestClassifier",
+  "n_estimators": 300,
+  "train_size": 3760,
+  "test_size": 940,
+  "accuracy": 0.8638,
+  "cv_mean_accuracy": 0.8587,
+  "cv_std_accuracy": 0.0236,
+  "classes": [
+    "apple",
+    "banana",
+    "chickpea",
+    "coconut",
+    "coffee",
+    "cotton",
+    "grapes",
+    "maize",
+    "mango",
+    "muskmelon",
+    "onion",
+    "orange",
+    "papaya",
+    "pomegranate",
+    "potato",
+    "rice",
+    "sugarcane",
+    "tomato",
+    "watermelon",
+    "wheat"
+  ],
+  "risk_thresholds": {
+    "low_min_probability": 0.45,
+    "medium_min_probability": 0.18
+  }
+}

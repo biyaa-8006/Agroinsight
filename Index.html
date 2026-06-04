@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Index.css">
+    <title>AgroInsight</title>
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-logo">
+    <div class="logo-mark">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M10 2C10 2 5.5 7 5.5 11.5C5.5 14 7.5 16 10 16C12.5 16 14.5 14 14.5 11.5C14.5 7 10 2 10 2Z" fill="white"/>
+        <line x1="10" y1="7" x2="10" y2="16" stroke="#28a745" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="7.5" y1="11" x2="10" y2="8" stroke="#28a745" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="12.5" y1="11" x2="10" y2="8" stroke="#28a745" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <span class="brand"><em>Agro</em>Insight</span>
+  </div>
+  <div class="nav-menu">
+    <a class="active" href="Index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="Contact.html">Contact</a>
+  </div>
+  <div class="nav-right">
+    <button class="btn-nav-ghost" onclick="window.location.href='About.html'">About Us</button>
+    <button class="btn-nav-fill" onclick="window.location.href='logout.html'">LogOut</button>
+  </div>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <a href="Index.html" class="active">Home</a>
+  <a href="features.html">Features</a>
+  <a href="Contact.html">Contact</a>
+  <div class="nav-drawer-btns">
+    <button class="btn-nav-ghost" onclick="window.location.href='About.html'">About Us</button>
+    <button class="btn-nav-fill" onclick="window.location.href='logout.html'">LogOut</button>
+  </div>
+</div>
+<script>
+  const ham = document.getElementById('navHamburger');
+  const drawer = document.getElementById('navDrawer');
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    drawer.classList.toggle('open');
+  });
+</script>
+
+<!-- ======= HOME PAGE ======= -->
+<div id="home" class="page on">
+<section class="hero">
+  <div class="hero-deco">
+    <div class="hero-circle1"></div>
+    <div class="hero-circle2"></div>
+    <div class="hero-circle3"></div>
+    <div class="hero-dot" style="width:6px;height:6px;left:35%;top:20%;"></div>
+    <div class="hero-dot" style="width:4px;height:4px;left:20%;top:60%;opacity:.6;"></div>
+    <div class="hero-dot" style="width:10px;height:10px;left:45%;top:75%;opacity:.4;"></div>
+  </div>
+  <div style="position:relative;z-index:2;">
+    <div class="hero-badge"><div class="pulse"></div>AI-Powered Agriculture Platform · Pakistan</div>
+    <h1>Smart <span class="g">Weather</span><br>Insights for<br>Better <span class="b">Crop</span> Decisions</h1>
+    <p class="hero-sub">Analyze weather impact, predict crop performance, and improve agricultural outcomes using advanced machine learning and real-time data — built for Pakistan's farmers, researchers, and policymakers.</p>
+    <div class="hero-btns">
+     <button class="btn-hero-main" onclick="window.location.href='features.html'" >Explore Features</button>
+     <button class="btn-hero-outline" onclick="window.location.href='contact.html'">
+      Get Started
+     </button>
+    </div>
+    <div class="hero-pills">
+      <div class="pill"><div class="pill-dot" style="background:#28a745;"></div>Real-time weather API</div>
+      <div class="pill"><div class="pill-dot" style="background:#64b5f6;"></div>ML Predictions</div>
+      <div class="pill"><div class="pill-dot" style="background:#EF9F27;"></div>Disaster Alerts</div>
+      <div class="pill"><div class="pill-dot" style="background:#5cd47a;"></div>80%+ Accuracy</div>
+    </div>
+  </div>
+  <div class="hero-right" style="position:relative;z-index:2;">
+    <div class="dash-card">
+      <div class="dash-header">
+        <span class="dash-title">Live Dashboard — Faisalabad</span>
+        <span class="dash-live">● LIVE</span>
+      </div>
+      <div class="w4">
+        <div class="w-box">
+          <div class="w-icon" style="background:rgba(255,213,79,.15);">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="3.5" fill="#FFD54F"/><line x1="7" y1="1" x2="7" y2="2.5" stroke="#FFD54F" stroke-width="1.3" stroke-linecap="round"/><line x1="7" y1="11.5" x2="7" y2="13" stroke="#FFD54F" stroke-width="1.3" stroke-linecap="round"/><line x1="1" y1="7" x2="2.5" y2="7" stroke="#FFD54F" stroke-width="1.3" stroke-linecap="round"/><line x1="11.5" y1="7" x2="13" y2="7" stroke="#FFD54F" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </div>
+          <div class="w-val">34°</div><div class="w-lbl">Temp</div>
+        </div>
+        <div class="w-box">
+          <div class="w-icon" style="background:rgba(100,181,246,.15);">
+            <svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M6 1 Q9 6 9 9 C9 11 7.7 13 6 13 C4.3 13 3 11 3 9 Q3 6 6 1Z" fill="#64B5F6"/></svg>
+          </div>
+          <div class="w-val">62%</div><div class="w-lbl">Humid</div>
+        </div>
+        <div class="w-box">
+          <div class="w-icon" style="background:rgba(92,212,122,.12);">
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5 C4 2 10 2 13 5" stroke="#5cd47a" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M2 8 C5 6 9 6 12 8" stroke="#5cd47a" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <div class="w-val">18</div><div class="w-lbl">km/h</div>
+        </div>
+        <div class="w-box">
+          <div class="w-icon" style="background:rgba(100,181,246,.1);">
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none"><path d="M2 10 Q4 3 7 2 Q10 3 12 10" stroke="#64b5f6" stroke-width="1.3" fill="rgba(100,181,246,.2)" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="w-val">8%</div><div class="w-lbl">Rain</div>
+        </div>
+      </div>
+      <div class="crop-section">
+        <div style="font-size:10px;color:#3d6e45;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;font-weight:600;">Crop yield forecast</div>
+        <div class="crop-row"><span class="crop-name">Wheat</span><div class="crop-track"><div class="crop-fill" style="width:82%;background:#28a745;"></div></div><span class="crop-pct">82%</span></div>
+        <div class="crop-row"><span class="crop-name">Rice</span><div class="crop-track"><div class="crop-fill" style="width:67%;background:#1D9E75;"></div></div><span class="crop-pct">67%</span></div>
+        <div class="crop-row"><span class="crop-name">Cotton</span><div class="crop-track"><div class="crop-fill" style="width:54%;background:#BA7517;"></div></div><span class="crop-pct">54%</span></div>
+        <div class="crop-row"><span class="crop-name">Sugarcane</span><div class="crop-track"><div class="crop-fill" style="width:78%;background:#185FA5;"></div></div><span class="crop-pct">78%</span></div>
+      </div>
+    </div>
+    <div class="mini-cards">
+      <div class="mini-card">
+        <div class="mc-label">Risk Level</div>
+        <div class="mc-val" style="font-size:16px;color:#EF9F27;font-weight:700;">Medium</div>
+        <div class="mc-sub" style="color:#EF9F27;font-size:10px;">Heatwave — 48hrs</div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-label">AI Confidence</div>
+        <div class="mc-val">87<span style="font-size:14px;">%</span></div>
+        <div class="mc-sub" style="color:#5cd47a;font-size:10px;">High accuracy</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="scroll-hint">
+  <div class="scroll-item">
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" fill="#28a745"/></svg>
+    Wheat Impact Analysis
+  </div>
+  <span class="scroll-sep">·</span>
+  <div class="scroll-item">
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" fill="#1D9E75"/></svg>
+    Rice Yield Forecast
+  </div>
+  <span class="scroll-sep">·</span>
+  <div class="scroll-item">
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" fill="#E24B4A"/></svg>
+    Flood Alert — Dera Ghazi Khan
+  </div>
+  <span class="scroll-sep">·</span>
+  <div class="scroll-item">
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" fill="#BA7517"/></svg>
+    Cotton Market Price Drop
+  </div>
+  <span class="scroll-sep">·</span>
+  <div class="scroll-item">
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" fill="#185FA5"/></svg>
+    Sugarcane Irrigation Advisory
+  </div>
+</div>
+
+<section class="about">
+  <div>
+    <div class="eyebrow">About the project</div>
+    <h2 class="section-h2">Bridging weather data<br>with <span>agricultural</span> outcomes</h2>
+    <p class="section-p">Pakistan's agricultural sector faces growing threats from climate change. AgroInsight was designed to bridge the critical gap between raw meteorological data and real farming decisions — giving every stakeholder the intelligence they need, when they need it.</p>
+    <div class="check-list">
+      <div class="cl-item">
+        <div class="cl-check"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cl-text"><h4>Real-time environmental monitoring</h4><p>Live temperature, humidity, rainfall and wind data for any district across Punjab and beyond.</p></div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-check"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cl-text"><h4>Machine learning crop forecasting</h4><p>10 to 30 day predictions for wheat, rice, cotton, and other key crops trained on historical datasets.</p></div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-check"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cl-text"><h4>Instant disaster early warnings</h4><p>Flood, drought, and heatwave alerts delivered in under 10 seconds with actionable safety protocols.</p></div>
+      </div>
+      <div class="cl-item">
+        <div class="cl-check"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="cl-text"><h4>Economic impact visualization</h4><p>Interactive dashboards linking weather patterns to market prices and farmer income trends.</p></div>
+      </div>
+    </div>
+    <button class="btn-hero-main" onclick="window.location.href='about.html'" style="font-size:13px;">View More</button>
+  </div>
+  <div class="about-img-side">
+    <div class="big-info-card">
+      <div class="bic-top">
+        <div class="bic-avatar"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3C11 3 6 8.5 6 13C6 15.8 8.2 18 11 18C13.8 18 16 15.8 16 13C16 8.5 11 3 11 3Z" fill="white"/><line x1="11" y1="8" x2="11" y2="18" stroke="#28a745" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <div><div class="bic-title">AgroInsight Platform</div><div class="bic-sub">University of Agriculture, Faisalabad</div></div>
+      </div>
+      <div class="bic-stats">
+        <div class="bs"><div class="bs-num">90%</div><div class="bs-lbl">Weather accuracy</div></div>
+        <div class="bs"><div class="bs-num">80%</div><div class="bs-lbl">Yield precision</div></div>
+        <div class="bs"><div class="bs-num">&lt;10s</div><div class="bs-lbl">Alert delivery</div></div>
+        <div class="bs"><div class="bs-num">24/7</div><div class="bs-lbl">Uptime SLA</div></div>
+      </div>
+    </div>
+    <div class="timeline-card">
+      <div class="tc-title">Development increments</div>
+      <div class="tc-steps">
+        <div class="tc-step">
+          <div class="tc-line"><div class="tc-dot" style="background:#28a745;"></div><div class="tc-connector"></div></div>
+          <div class="tc-content"><h5>User management & authentication</h5><p>Login, roles, secure credentials</p></div>
+        </div>
+        <div class="tc-step">
+          <div class="tc-line"><div class="tc-dot" style="background:#1D9E75;"></div><div class="tc-connector"></div></div>
+          <div class="tc-content"><h5>Weather data collection module</h5><p>OpenWeather API + MySQL storage</p></div>
+        </div>
+        <div class="tc-step">
+          <div class="tc-line"><div class="tc-dot" style="background:#185FA5;"></div><div class="tc-connector"></div></div>
+          <div class="tc-content"><h5>Crop selection & impact analysis</h5><p>Risk levels: Low / Medium / High</p></div>
+        </div>
+        <div class="tc-step">
+          <div class="tc-line"><div class="tc-dot" style="background:#7F77DD;"></div><div class="tc-connector"></div></div>
+          <div class="tc-content"><h5>Machine learning prediction</h5><p>Python + Scikit-learn forecasting</p></div>
+        </div>
+        <div class="tc-step">
+          <div class="tc-line"><div class="tc-dot" style="background:#E24B4A;"></div></div>
+          <div class="tc-content"><h5>Alerts, visualization & reports</h5><p>Disaster alerts + downloadable reports</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="sb"><div class="sb-num">90<span class="sb-unit">%</span></div><div class="sb-label">Weather<br>accuracy</div></div>
+    <div class="sb"><div class="sb-num">80<span class="sb-unit">%</span></div><div class="sb-label">Yield<br>precision</div></div>
+    <div class="sb"><div class="sb-num">10<span class="sb-unit">+</span></div><div class="sb-label">Crops<br>supported</div></div>
+    <div class="sb"><div class="sb-num">&lt;10<span class="sb-unit">s</span></div><div class="sb-label">Alert<br>delivery</div></div>
+    <div class="sb"><div class="sb-num">24<span class="sb-unit">/7</span></div><div class="sb-label">Platform<br>uptime</div></div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="t-header">
+    <div class="eyebrow">What people say</div>
+    <h2 class="section-h2" style="font-size:30px;">Trusted by farmers,<br>researchers & <span>policymakers</span></h2>
+  </div>
+  <div class="t-grid">
+    <div class="t-card">
+      <div class="t-quote">"</div>
+      <p class="t-text">AgroInsight helped me understand why my cotton yield dropped last season. The weather correlation charts were eye-opening — I can now plan irrigation better than before.</p>
+      <div class="t-author">
+        <div class="t-avatar" style="background:#e8f7ea;color:#1a5e2a;">AM</div>
+        <div><div class="t-name">Ahmed Mahmood</div><div class="t-role">Cotton Farmer, Multan</div></div>
+      </div>
+    </div>
+    <div class="t-card" style="border-color:#28a745;border-width:1.5px;">
+      <div class="t-quote">"</div>
+      <p class="t-text">As a researcher at UAF, the economic impact visualization module is exactly what we needed to demonstrate climate-agriculture links to government stakeholders. Excellent work.</p>
+      <div class="t-author">
+        <div class="t-avatar" style="background:#e8f7ea;color:#1a5e2a;">DR</div>
+        <div><div class="t-name">Dr. Rashida Khan</div><div class="t-role">Agricultural Researcher, UAF</div></div>
+      </div>
+    </div>
+    <div class="t-card">
+      <div class="t-quote">"</div>
+      <p class="t-text">The disaster alert system warned our village about an incoming flood 2 days in advance. We had time to protect our rice crop and saved nearly 60% of the harvest. Truly life-changing.</p>
+      <div class="t-author">
+        <div class="t-avatar" style="background:#e8f7ea;color:#1a5e2a;">SB</div>
+        <div><div class="t-name">Shahid Baloch</div><div class="t-role">Rice Farmer, Sheikhupura</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="cta-bg"><div class="cta-glow1"></div></div>
+  <div class="cta-inner">
+    <div class="cta-eyebrow">Take action today</div>
+    <h2 class="cta-h2">Ready to protect<br>your harvest?</h2>
+    <p class="cta-p">Join farmers, researchers and policymakers across Punjab using data-driven weather insights to make smarter agricultural decisions every season.</p>
+    <div class="cta-btns">
+      <button class="btn-cta-main" onclick="window.location.href='login.html'">Join Now — it's free</button>
+      <button class="btn-cta-ghost" onclick="window.location.href='features.html'">See all features</button>
+    </div>
+  </div>
+</section>
+
+</div><!-- end home -->
+
+<!-- FOOTER (on all pages) -->
+<footer class="footer">
+  <div class="footer-main">
+    <div>
+      <div class="fm-brand"><em>Agro</em>Insight</div>
+      <p class="fm-desc">A final year BS Software Engineering project combining real-time weather data, machine learning, and agricultural analytics — designed to support Pakistan's farming community at the University of Agriculture, Faisalabad.</p>
+      <div class="fm-social">
+        <div class="social-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="10" height="10" rx="3" stroke="#3d6e45" stroke-width="1.2"/><circle cx="7" cy="7" r="2.5" stroke="#3d6e45" stroke-width="1.2"/><circle cx="10.2" cy="3.8" r=".8" fill="#3d6e45"/></svg></div>
+        <div class="social-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 3L6.5 7L2 11H3.5L7 8.5L10.5 11H12L7.5 7L12 3H10.5L7 5.5L3.5 3Z" fill="#3d6e45"/></svg></div>
+        <div class="social-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2H5.5L7 6L5.5 7.5C6.2 9 6.5 9.5 8 10.5L9.5 9L12 10.5V12C9 13 2 10 2 2Z" stroke="#3d6e45" stroke-width="1.2" fill="none" stroke-linejoin="round"/></svg></div>
+      </div>
+    </div>
+    <div class="fc">
+      <h4>Platform</h4>
+      <a onclick="window.location.href='agroinsight.html'">Home</a>
+      <a onclick="window.location.href='features.html'">Features</a>
+      <a onclick="window.location.href='contact.html'">Contact</a>
+    </div>
+    <div class="fc">
+      <h4>Modules</h4>
+      <a>Weather data</a>
+      <a>Crop analysis</a>
+      <a>AI predictions</a>
+      <a>Disaster alerts</a>
+      <a>Economic reports</a>
+    </div>
+    <div class="fc">
+      <h4>Project</h4>
+      <a>About AgroInsight</a>
+      <a>Research report</a>
+      <a>UAF — CS Dept</a>
+      <a>Methodology</a>
+      <a>Timeline</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="fb-copy">© 2025 AgroInsight · University of Agriculture, Faisalabad · BS Software Engineering</span>
+    <div class="fb-pills">
+      <span class="fbp">PHP</span>
+      <span class="fbp">Python</span>
+      <span class="fbp">MySQL</span>
+      <span class="fbp">Scikit-learn</span>
+    </div>
+  </div>
+</footer>
+ <!-- CHATBOT BUTTON -->
+   
+   <a href="Chatbot.html" class="chatbot-btn">
+   <i data-lucide="message-square">🤖</i>
+</a>
+<script>
+  window.AGRO_API_BASE = 'http://localhost/agroinsight/Backend/api';
+</script>
+<script src="js/index-live.js"></script>
+<script src="js/config.js"></script>
+  <script src="js/preferences.js"></script>
+</body>
+</html>

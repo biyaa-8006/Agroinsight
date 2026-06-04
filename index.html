@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/Settings.css">
+  <title>AgroInsight — Admin</title>
+  <style>
+    .admin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; margin-bottom: 20px; }
+    .stat-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; padding: 14px; }
+    .stat-card h3 { font-size: 22px; margin: 0; color: #86efac; }
+    .stat-card p { font-size: 11px; color: #9ca3af; margin: 4px 0 0; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th, td { padding: 8px; border-bottom: 1px solid rgba(255,255,255,.06); text-align: left; }
+    .tab-btns { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    .tab-btns button { padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,.12); background: transparent; color: #9ca3af; cursor: pointer; }
+    .tab-btns button.active { background: rgba(34,197,94,.15); color: #86efac; border-color: rgba(34,197,94,.35); }
+    .panel { display: none; }
+    .panel.active { display: block; }
+    input, select { width: 100%; padding: 8px; margin: 4px 0 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,.12); background: #0a0f0d; color: #e5e7eb; }
+    .btn-sm { padding: 4px 10px; font-size: 11px; border-radius: 6px; cursor: pointer; border: none; margin-right: 4px; }
+    .btn-del { background: rgba(239,68,68,.2); color: #fca5a5; }
+    .btn-edit { background: rgba(96,165,250,.2); color: #93c5fd; }
+  </style>
+</head>
+<body>
+<div class="app" style="min-height:100vh;">
+  <main class="main" style="margin-left:0;max-width:1100px;margin:0 auto;padding:24px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+      <div>
+        <h1 style="margin:0;font-size:22px;">Administration</h1>
+        <p style="color:#6b7280;font-size:12px;margin:4px 0 0;">Users · Crops · System configuration</p>
+      </div>
+      <div>
+        <button class="btn-sm btn-edit" onclick="location.href='../Weather.html'">Farmer dashboard</button>
+        <button class="btn-sm btn-del" onclick="location.href='../logout.html'">Logout</button>
+      </div>
+    </div>
+    <div id="adminMsg" style="font-size:12px;margin-bottom:10px;"></div>
+    <div class="tab-btns">
+      <button type="button" class="active" data-tab="stats">Overview</button>
+      <button type="button" data-tab="users">Users</button>
+      <button type="button" data-tab="crops">Crops</button>
+      <button type="button" data-tab="config">Config</button>
+      <button type="button" data-tab="messages">Contact</button>
+    </div>
+    <div id="panel-stats" class="panel active">
+      <div class="admin-grid" id="statsGrid"></div>
+      <h3 style="font-size:14px;">Newest users</h3>
+      <div id="newUsersList"></div>
+    </div>
+    <div id="panel-users" class="panel">
+      <h3>Add user</h3>
+      <input id="newName" placeholder="Name">
+      <input id="newEmail" placeholder="Email" type="email">
+      <input id="newPass" placeholder="Password" type="password">
+      <select id="newRole"><option value="farmer">Farmer</option><option value="admin">Admin</option></select>
+      <input id="newRegion" placeholder="Region" value="Punjab">
+      <button class="btn-sm btn-edit" id="btnCreateUser">Create user</button>
+      <h3 style="margin-top:24px;">All users</h3>
+      <table><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Region</th><th></th></tr></thead><tbody id="usersTable"></tbody></table>
+    </div>
+    <div id="panel-crops" class="panel">
+      <table><thead><tr><th>Crop</th><th>Temp range</th><th>Season</th><th></th></tr></thead><tbody id="cropsTable"></tbody></table>
+    </div>
+    <div id="panel-config" class="panel">
+      <p style="font-size:12px;color:#9ca3af;">System keys (default city, alert thresholds)</p>
+      <div id="configForm"></div>
+      <button class="btn-sm btn-edit" id="btnSaveConfig">Save configuration</button>
+    </div>
+    <div id="panel-messages" class="panel">
+      <h3>Contact form inbox</h3>
+      <table><thead><tr><th>Date</th><th>Name</th><th>Email</th><th>Subject</th><th>Message</th></tr></thead>
+      <tbody id="messagesTable"></tbody></table>
+    </div>
+  </main>
+</div>
+<script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>

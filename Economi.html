@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  
+    <link rel="stylesheet" href="css/Economi.css">
+    <title>Agrointellent</title>
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar"><span></span><span></span><span></span></button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="logo">
+      <div class="logo-box">🌾</div>
+
+      <div class="logo-text" id="logoText">
+        <h2>AgroInsight</h2>
+        <p>Impact Analytics</p>
+      </div>
+    </div>
+  
+
+    <nav>
+      <button class="nav-btn" onclick="window.location.href='Index.html'">
+        <i data-lucide="activity"></i>
+        <span>Home</span>
+      </button>
+      <button class="nav-btn" onclick="window.location.href='Weather.html'">
+        <i data-lucide="home"></i>
+        <span>Dashboard</span>
+      </button>
+
+      <button class="nav-btn" onclick="window.location.href='Analysis.html'">
+        <i data-lucide="leaf"></i>
+        <span>Crop Analysis</span>
+      </button>
+
+      <button class="nav-btn" onclick="window.location.href='Alert.html'">
+        <i data-lucide="alert-triangle"></i>
+        <span>Disaster Alerts</span>
+      </button>
+
+      <button class="nav-btn active" >
+        <i data-lucide="dollar-sign"></i>
+        <span>Economic Impact</span>
+      </button>
+
+      <button class="nav-btn" onclick="window.location.href='Chatbot.html'">
+        <i data-lucide="bot"></i>
+        <span>Chatbot</span>
+      </button>
+
+      <button class="nav-btn" onclick="window.location.href='Settings.html'">
+        <i data-lucide="activity"></i>
+        <span>Settings</span>
+      </button>
+      
+    </nav>
+
+    <button class="toggle-btn" id="toggleBtn">
+      <i data-lucide="menu"></i>
+    </button>
+
+  </aside>
+   <!-- MAIN -->
+  <main class="main">
+  <div class="nav-a">
+      <div class="nav-menu">
+    <a class="active" href="Index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="Contact.html">Contact</a>
+      </div>
+      <div class="nav-right">
+    <button class="btn-nav-ghost" onclick="window.location.href='About.html'">About Us</button>
+    <button class="btn-nav-fill" onclick="window.location.href='logout.html'">Logout</button>
+    </div>
+
+  </div>
+  <br>
+<!-- ── HEADER ─────────────────────────────────────────────── -->
+<div class="mod-header">
+  <div class="mod-icon">📊</div>
+  <div>
+    <div style="font-size:10px;color:#4b5563;">AgriWeather › Module 4</div>
+    <div style="font-size:14px;font-weight:800;">Economic Impact Visualization</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:5px;padding:4px 12px;border-radius:20px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);font-size:11px;color:var(--green);font-weight:700;">
+    <span style="width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 1.4s infinite;display:inline-block;"></span> Live Data
+  </div>
+  <div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;">
+    <span style="background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:#ef4444;padding:3px 12px;border-radius:20px;font-size:10px;font-weight:700;">📉 Rs 245B Total Loss</span>
+    <span style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);color:var(--amber);padding:3px 12px;border-radius:20px;font-size:10px;font-weight:700;">⚠ -2.8% Agri GDP</span>
+    <span style="background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.3);color:var(--purple);padding:3px 12px;border-radius:20px;font-size:10px;font-weight:700;">🔬 Research Mode</span>
+  </div>
+</div>
+
+<!-- ── TICKER ──────────────────────────────────────────────── -->
+<div class="ticker-bar">
+  <div class="ticker-lbl">📈 MARKET</div>
+  <div class="ticker-txt">
+    🌾 Wheat prices surge +18.7% after Punjab floods — Rs 3,800/40kg &nbsp;·&nbsp; 🌿 Basmati rice exports down 23% — Rs 42B revenue loss &nbsp;·&nbsp;
+    🌸 Cotton market loses Rs 45B due to boll rot from heatwave &nbsp;·&nbsp; 🏜️ Drought pushes vegetable inflation to +34% in Balochistan &nbsp;·&nbsp;
+    💰 Total agricultural economic loss 2024-25 estimated at Rs 245 Billion &nbsp;·&nbsp; 📊 Farmer household income dropped avg Rs 28,400 this season
+  </div>
+</div>
+
+<div style="padding:20px;max-width:1400px;margin:0 auto;">
+
+<!-- ── KPI CARDS ──────────────────────────────────────────── -->
+<div class="row g-3 mb-4 fade-up">
+  <div class="col-6 col-lg-3">
+    <div class="kpi" style="background:rgba(239,68,68,.08);border-color:rgba(239,68,68,.22);color:#ef4444;">
+      <div style="font-size:10px;color:#ef4444;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">📉 Total Crop Loss</div>
+      <div class="kpi-val" style="color:#ef4444;">Rs 245B</div>
+      <div class="kpi-sub">Estimated losses — FY 2024-25</div>
+      <div class="kpi-badge" style="background:rgba(239,68,68,.18);color:#ef4444;border:1px solid rgba(239,68,68,.3);">↑ 34% vs last year</div>
+      <div class="prog"><div class="prog-f" style="background:#ef4444;" data-w="82%"></div></div>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi" style="background:rgba(249,115,22,.08);border-color:rgba(249,115,22,.22);color:#f97316;">
+      <div style="font-size:10px;color:#f97316;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">🏦 Agri GDP Impact</div>
+      <div class="kpi-val" style="color:#f97316;">-2.8%</div>
+      <div class="kpi-sub">Agriculture sector GDP Q3 2025</div>
+      <div class="kpi-badge" style="background:rgba(249,115,22,.18);color:#f97316;border:1px solid rgba(249,115,22,.3);">↓ Worst in 8 years</div>
+      <div class="prog"><div class="prog-f" style="background:#f97316;" data-w="68%"></div></div>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi" style="background:rgba(245,158,11,.08);border-color:rgba(245,158,11,.22);color:var(--amber);">
+      <div style="font-size:10px;color:var(--amber);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">👨‍🌾 Avg Income Drop</div>
+      <div class="kpi-val" style="color:var(--amber);">Rs 28.4k</div>
+      <div class="kpi-sub">Per farming family this season</div>
+      <div class="kpi-badge" style="background:rgba(245,158,11,.18);color:var(--amber);border:1px solid rgba(245,158,11,.3);">↓ 31% of avg income</div>
+      <div class="prog"><div class="prog-f" style="background:var(--amber);" data-w="72%"></div></div>
+    </div>
+  </div>
+  <div class="col-6 col-lg-3">
+    <div class="kpi" style="background:rgba(96,165,250,.08);border-color:rgba(96,165,250,.22);color:var(--blue);">
+      <div style="font-size:10px;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">🛒 Food Price Inflation</div>
+      <div class="kpi-val" style="color:var(--blue);">+22.4%</div>
+      <div class="kpi-sub">Consumer food prices year-on-year</div>
+      <div class="kpi-badge" style="background:rgba(96,165,250,.18);color:var(--blue);border:1px solid rgba(96,165,250,.3);">↑ Above 20% threshold</div>
+      <div class="prog"><div class="prog-f" style="background:var(--blue);" data-w="55%"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MAIN TIMELINE CHART ────────────────────────────────── -->
+<div class="glass p-4 mb-4 fade-up" style="animation-delay:.08s">
+  <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+    <div>
+      <div class="stag sg"><span style="width:5px;height:5px;border-radius:50%;background:var(--green);display:inline-block;animation:pulse 1.4s infinite;"></span> Economic Chain</div>
+      <h6 style="font-weight:800;font-size:15px;margin:0;">12-Month Weather → Yield → Market Price Impact Chain</h6>
+      <p style="font-size:11px;color:var(--muted);margin:2px 0 0;">Monthly correlation: Rainfall, Crop Yield & Wheat Market Price · Disaster events annotated</p>
+    </div>
+    <div style="display:flex;gap:6px;" id="timelineViewBtns">
+      <button class="vbtn act" onclick="setTimelineView('all',this)">All Data</button>
+      <button class="vbtn" onclick="setTimelineView('yield',this)">Yield Focus</button>
+      <button class="vbtn" onclick="setTimelineView('price',this)">Price Focus</button>
+    </div>
+  </div>
+  <canvas id="timelineChart" height="90"></canvas>
+  <!-- Disaster event legend -->
+  <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">
+    <span style="font-size:10px;color:var(--muted);">📌 Events:</span>
+    <span style="font-size:10px;padding:2px 10px;border-radius:20px;background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.25);">🌊 Flood – Feb–Mar</span>
+    <span style="font-size:10px;padding:2px 10px;border-radius:20px;background:rgba(249,115,22,.12);color:#f97316;border:1px solid rgba(249,115,22,.25);">🌡️ Heatwave – Jun–Aug</span>
+    <span style="font-size:10px;padding:2px 10px;border-radius:20px;background:rgba(245,158,11,.12);color:var(--amber);border:1px solid rgba(245,158,11,.25);">🏜️ Drought – Oct–Nov</span>
+    <span style="font-size:10px;padding:2px 10px;border-radius:20px;background:rgba(96,165,250,.12);color:var(--blue);border:1px solid rgba(96,165,250,.25);">⛈ Storm – Dec</span>
+  </div>
+</div>
+
+<!-- ── INCOME SIMULATOR + LOSS DONUT ──────────────────────── -->
+<div class="row g-4 mb-4">
+
+  <!-- Farmer Income Simulator -->
+  <div class="col-lg-7 fade-up" style="animation-delay:.13s">
+    <div class="glass p-4 h-100">
+      <div class="stag sg">🧮 Interactive Simulator</div>
+      <h6 style="font-weight:800;font-size:15px;margin-bottom:3px;">Farmer Income Simulator</h6>
+      <p style="font-size:11px;color:var(--muted);margin-bottom:16px;">Adjust weather &amp; market variables to model real-time income impact on farming households</p>
+
+      <div class="row g-3 mb-3">
+        <!-- Sliders -->
+        <div class="col-md-6">
+          <div style="margin-bottom:14px;">
+            <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px;">
+              <span style="color:var(--muted);font-weight:600;">💧 Rainfall (mm/season)</span>
+              <span style="color:var(--blue);font-weight:700;" id="rainVal">320 mm</span>
+            </div>
+            <input type="range" class="sim-slider" id="rainSlider" min="0" max="700" value="320" oninput="updateSim()" style="background:linear-gradient(90deg,#60a5fa 46%,rgba(255,255,255,.1) 46%);">
+            <div style="display:flex;justify-content:space-between;font-size:9px;color:#374151;margin-top:3px;"><span>0 (Drought)</span><span>700 (Flood)</span></div>
+          </div>
+          <div style="margin-bottom:14px;">
+            <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px;">
+              <span style="color:var(--muted);font-weight:600;">🌡️ Temperature (°C)</span>
+              <span style="color:var(--orange);font-weight:700;" id="tempVal">28 °C</span>
+            </div>
+            <input type="range" class="sim-slider" id="tempSlider" min="10" max="50" value="28" oninput="updateSim()" style="background:linear-gradient(90deg,#f97316 45%,rgba(255,255,255,.1) 45%);">
+            <div style="display:flex;justify-content:space-between;font-size:9px;color:#374151;margin-top:3px;"><span>10°C (Cold)</span><span>50°C (Extreme)</span></div>
+          </div>
+          <div style="margin-bottom:14px;">
+            <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px;">
+              <span style="color:var(--muted);font-weight:600;">🌾 Crop Type</span>
+            </div>
+            <select id="cropSel" onchange="updateSim()" style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--text);border-radius:8px;padding:8px 11px;font-size:12px;outline:none;">
+              <option value="wheat">🌾 Wheat</option>
+              <option value="rice">🌿 Rice (Basmati)</option>
+              <option value="cotton">🌸 Cotton</option>
+              <option value="maize">🌽 Maize</option>
+              <option value="sugarcane">🎋 Sugarcane</option>
+            </select>
+          </div>
+          <div style="margin-bottom:6px;">
+            <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px;">
+              <span style="color:var(--muted);font-weight:600;">📐 Farm Size (Acres)</span>
+              <span style="color:var(--green);font-weight:700;" id="areaVal">12 Acres</span>
+            </div>
+            <input type="range" class="sim-slider" id="areaSlider" min="1" max="100" value="12" oninput="updateSim()" style="background:linear-gradient(90deg,#22c55e 11%,rgba(255,255,255,.1) 11%);">
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px;">
+              <span style="color:var(--muted);font-weight:600;">💰 Market Price (Rs/40kg)</span>
+              <span style="color:var(--amber);font-weight:700;" id="priceVal">Rs 3,800</span>
+            </div>
+            <input type="range" class="sim-slider" id="priceSlider" min="800" max="9000" value="3800" oninput="updateSim()" style="background:linear-gradient(90deg,#f59e0b 46%,rgba(255,255,255,.1) 46%);">
+          </div>
+        </div>
+
+        <!-- Output cards -->
+        <div class="col-md-6">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+            <div class="sim-val-box">
+              <div class="sim-lbl">Est. Yield</div>
+              <div class="sim-num" id="simYield" style="color:var(--green);">3.8 t/ha</div>
+            </div>
+            <div class="sim-val-box">
+              <div class="sim-lbl">Gross Revenue</div>
+              <div class="sim-num" id="simRevenue" style="color:var(--blue);">Rs 456k</div>
+            </div>
+            <div class="sim-val-box">
+              <div class="sim-lbl">Input Costs</div>
+              <div class="sim-num" id="simCosts" style="color:var(--amber);">Rs 300k</div>
+            </div>
+            <div class="sim-val-box">
+              <div class="sim-lbl">Net Profit</div>
+              <div class="sim-num" id="simProfit" style="color:var(--green);">Rs 156k</div>
+            </div>
+          </div>
+          <!-- Risk gauge -->
+          <div style="padding:10px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid var(--border);text-align:center;margin-bottom:8px;">
+            <div style="font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">Weather Risk Score</div>
+            <div style="font-size:2rem;font-weight:900;" id="simRisk">22%</div>
+            <div id="simRiskLabel" style="font-size:10px;color:var(--green);">Low Risk</div>
+          </div>
+          <canvas id="simChart" height="140"></canvas>
+        </div>
+      </div>
+
+      <!-- Insight bar -->
+      <div id="simInsight" style="padding:10px 13px;border-radius:9px;background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.18);font-size:11px;color:#86efac;margin-top:6px;line-height:1.6;"></div>
+    </div>
+  </div>
+
+  <!-- Loss Distribution Donut -->
+  <div class="col-lg-5 fade-up" style="animation-delay:.17s">
+    <div class="glass p-4 h-100 d-flex flex-column">
+      <div class="stag sr">💥 Loss Breakdown</div>
+      <h6 style="font-weight:800;font-size:15px;margin-bottom:3px;">Economic Loss by Disaster Type</h6>
+      <p style="font-size:11px;color:var(--muted);margin-bottom:14px;">Rs 245 Billion total loss — FY 2024-25 Pakistan Agriculture</p>
+      <canvas id="donutChart" height="200"></canvas>
+      <!-- Loss legend table -->
+      <div style="margin-top:14px;">
+        <div id="donutLegend"></div>
+      </div>
+      <!-- Macro sector impact -->
+      <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--border);">
+        <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:10px;">📉 Macro Sector Impact</div>
+        <div id="macroBars"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── BUBBLE CHART + MARKET PRICES ───────────────────────── -->
+<div class="row g-4 mb-4">
+
+  <!-- Weather-Price Bubble Chart -->
+  <div class="col-lg-5 fade-up" style="animation-delay:.22s">
+    <div class="glass p-4 h-100">
+      <div class="stag sb">🔬 Correlation</div>
+      <h6 style="font-weight:800;font-size:15px;margin-bottom:3px;">Rainfall vs Yield vs Price Correlation</h6>
+      <p style="font-size:11px;color:var(--muted);margin-bottom:12px;">Bubble size = market price impact · Each bubble = one crop/season observation</p>
+      <canvas id="bubbleChart" height="230"></canvas>
+      <div style="font-size:10px;color:#374151;text-align:center;margin-top:8px;">← Lower rainfall = smaller yield = higher market price →</div>
+    </div>
+  </div>
+
+  <!-- Market Price Table -->
+  <div class="col-lg-7 fade-up" style="animation-delay:.26s">
+    <div class="glass p-4 h-100">
+      <div class="stag sa">📊 Live Market</div>
+      <h6 style="font-weight:800;font-size:15px;margin-bottom:3px;">Crop Market Price Tracker</h6>
+      <p style="font-size:11px;color:var(--muted);margin-bottom:14px;">Real-time price impact from weather events · Green = price drop (good for buyers), Red = price surge (loss for consumers)</p>
+      <div style="overflow-x:auto;">
+        <div class="mkt-table-wrap"><table class="mkt-table" id="mktTable"></table>
+      </div>
+      <!-- Price inflation breakdown -->
+      <div style="margin-top:14px;padding:12px;border-radius:10px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.18);">
+        <div style="font-size:11px;font-weight:700;color:var(--amber);margin-bottom:8px;">⚡ Shock Impact on Consumer Basket</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;" id="shockCards"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── DISTRICT HEATMAP + POLICY TOOLS ───────────────────── -->
+<div class="row g-4 mb-4">
+
+  <!-- District Economic Heatmap -->
+  <div class="col-lg-7 fade-up" style="animation-delay:.3s">
+    <div class="glass p-4">
+      <div class="stag so">🗺 Geospatial</div>
+      <h6 style="font-weight:800;font-size:15px;margin-bottom:3px;">District-Wise Economic Loss Heatmap</h6>
+      <p style="font-size:11px;color:var(--muted);margin-bottom:14px;">Punjab district losses (Rs Billion) · Hover for details · Scale: Low → High loss</p>
+      <div id="ecoHeatmap" style="display:grid;gap:7px;margin-bottom:10px;"></div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:10px;color:var(--muted);margin-top:4px;">
+        <span>Low Loss</span>
+        <div style="flex:1;height:7px;border-radius:4px;background:linear-gradient(90deg,rgba(34,197,94,.7),rgba(245,158,11,.7),rgba(239,68,68,.85));"></div>
+        <span>High Loss</span>
+      </div>
+      <div style="margin-top:10px;display:flex;justify-content:space-between;font-size:11px;color:var(--muted);">
+        <span>Total Punjab Loss: <strong style="color:#ef4444;">Rs 186.4B</strong></span>
+        <span>Most Affected: <strong style="color:#ef4444;">Multan (Rs 28.4B)</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Policy Tools -->
+  <div class="col-lg-5 fade-up" style="animation-delay:.34s">
+    <div class="glass p-4 h-100 d-flex flex-column">
+      <div class="stag sp">🏛 Policy Engine</div>
+      <h6 style="font-weight:800;font-size:15px;margin-bottom:3px;">Policy Impact &amp; Recommendations</h6>
+      <p style="font-size:11px;color:var(--muted);margin-bottom:14px;">Evidence-based strategies for policymakers &amp; researchers</p>
+
+      <div id="policyCards" style="flex:1;overflow-y:auto;"></div>
+
+      <!-- ROI Chart -->
+      <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border);">
+        <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:10px;">💹 Policy ROI Analysis (per Rs 1B invested)</div>
+        <canvas id="roiChart" height="120"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── EXPORT PANEL ──────────────────────────────────────── -->
+<div class="glass p-4 mb-4 fade-up" style="animation-delay:.38s">
+  <div class="row align-items-center g-3">
+    <div class="col-lg-4">
+      <div class="stag sp">📤 Research Tools</div>
+      <h6 style="font-weight:800;font-size:15px;margin:0;">Export &amp; Share Reports</h6>
+      <p style="font-size:11px;color:var(--muted);margin-top:3px;margin-bottom:0;">Generate reports for policymakers, donors, and researchers</p>
+    </div>
+    <div class="col-lg-8">
+      <div class="row g-2">
+        <div class="col-6 col-md-3">
+          <button class="exp-btn" style="border-color:rgba(239,68,68,.3);color:#ef4444;" onclick="simulateExport(this,'PDF Report')">
+            <i class="fa fa-file-pdf"></i><div><div style="font-size:11px;">PDF Report</div><div style="font-size:9px;color:var(--muted);">Full analysis</div></div>
+          </button>
+        </div>
+        <div class="col-6 col-md-3">
+          <button class="exp-btn" style="border-color:rgba(34,197,94,.3);color:var(--green);" onclick="simulateExport(this,'Excel Data')">
+            <i class="fa fa-file-excel"></i><div><div style="font-size:11px;">Excel Data</div><div style="font-size:9px;color:var(--muted);">Raw datasets</div></div>
+          </button>
+        </div>
+        <div class="col-6 col-md-3">
+          <button class="exp-btn" style="border-color:rgba(96,165,250,.3);color:var(--blue);" onclick="simulateExport(this,'Policy Brief')">
+            <i class="fa fa-file-lines"></i><div><div style="font-size:11px;">Policy Brief</div><div style="font-size:9px;color:var(--muted);">Policymaker doc</div></div>
+          </button>
+        </div>
+        <div class="col-6 col-md-3">
+          <button class="exp-btn" style="border-color:rgba(167,139,250,.3);color:var(--purple);" onclick="simulateExport(this,'Share Link')">
+            <i class="fa fa-share-nodes"></i><div><div style="font-size:11px;">Share Report</div><div style="font-size:9px;color:var(--muted);">Shareable link</div></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="exportResult" style="margin-top:10px;"></div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<!-- ════════ JS ════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="js/auth-guard.js"></script>
+<script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+<script src="js/economi.js"></script>
+<script src="js/economi-live.js"></script>
+<script>const st=document.getElementById("sidebarToggle");const sb=document.getElementById("sidebar");const ov=document.getElementById("sidebarOverlay");st.addEventListener("click",()=>{st.classList.toggle("open");sb.classList.toggle("mobile-open");ov.classList.toggle("active");});ov.addEventListener("click",()=>{st.classList.remove("open");sb.classList.remove("mobile-open");ov.classList.remove("active");});</script>
+<script src="js/config.js"></script>
+  <script src="js/preferences.js"></script>
+</body>
+</html>

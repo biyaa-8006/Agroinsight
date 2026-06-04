@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/feature.css">
+    <title>AgroInsight</title>
+</head>
+<body>
+
+    <nav class="nav">
+  <div class="nav-logo">
+    <div class="logo-mark">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M10 2C10 2 5.5 7 5.5 11.5C5.5 14 7.5 16 10 16C12.5 16 14.5 14 14.5 11.5C14.5 7 10 2 10 2Z" fill="white"/>
+        <line x1="10" y1="7" x2="10" y2="16" stroke="#28a745" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="7.5" y1="11" x2="10" y2="8" stroke="#28a745" stroke-width="1.2" stroke-linecap="round"/>
+        <line x1="12.5" y1="11" x2="10" y2="8" stroke="#28a745" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <span class="brand"><em>Agro</em>Insight</span>
+  </div>
+  <div class="nav-menu">
+    <a class="active" href="Index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a  href="Contact.html" >Contact</a>
+  </div>
+  <div class="nav-right">
+    <button class="btn-nav-ghost" onclick="window.location.href='About_Us'">About Us</button>
+    <button class="btn-nav-fill" onclick="window.location.href='logout'">Log Out</button>
+  </div>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <a href="Index.html">Home</a>
+  <a href="features.html" class="active">Features</a>
+  <a href="Contact.html">Contact</a>
+  <div class="nav-drawer-btns">
+    <button class="btn-nav-ghost" onclick="window.location.href='About.html'">About Us</button>
+    <button class="btn-nav-fill" onclick="window.location.href='logout.html'">LogOut</button>
+  </div>
+</div>
+<script>
+  const ham = document.getElementById('navHamburger');
+  const drawer = document.getElementById('navDrawer');
+  ham.addEventListener('click', () => { ham.classList.toggle('open'); drawer.classList.toggle('open'); });
+</script>
+
+<!-- ======= FEATURES PAGE ======= -->
+<div id="features" class="page">
+
+<section class="feat-hero">
+  <div class="feat-hero-deco">
+    <div class="fh-ring" style="width:700px;height:700px;margin-left:-350px;margin-top:-350px;"></div>
+    <div class="fh-ring" style="width:480px;height:480px;margin-left:-240px;margin-top:-240px;"></div>
+    <div class="fh-ring" style="width:280px;height:280px;margin-left:-140px;margin-top:-140px;"></div>
+  </div>
+  <div class="hero-badge" style="margin-bottom:18px;"><div class="pulse"></div>5 Powerful Modules</div>
+  <h1 style="position:relative;z-index:2;">Platform <span>Features</span></h1>
+  <p style="position:relative;z-index:2;margin-top:14px;">Everything you need to connect weather intelligence with crop outcomes — from real-time monitoring to economic forecasting.</p>
+</section>
+
+<div class="feat-tabs">
+  <button class="ftab active">All features</button>
+  <button class="ftab">Weather data</button>
+  <button class="ftab">Crop analysis</button>
+  <button class="ftab">AI predictions</button>
+  <button class="ftab">Alerts</button>
+  <button class="ftab">Economics</button>
+</div>
+
+<!-- FEATURE 1 -->
+<section class="fd-section">
+  <div class="fd-grid">
+    <div>
+      <div class="fd-number">01</div>
+      <div class="fd-eyebrow">Real-Time Weather Data</div>
+      <h2 class="fd-h2">Live weather intelligence for every district</h2>
+      <p class="fd-p">Pull live temperature, humidity, rainfall, and wind speed data from OpenWeather API for any location across Pakistan. The dashboard updates automatically and stores historical readings in MySQL for trend analysis — giving farmers and researchers an always-current, always-accurate view of environmental conditions.</p>
+      <div class="fd-tags">
+        <span class="fd-tag">OpenWeather API</span>
+        <span class="fd-tag">MySQL storage</span>
+        <span class="fd-tag">District-wise data</span>
+        <span class="fd-tag">Auto-refresh</span>
+        <button class="ftab active" onclick="window.location.href='Weather.html'">Explore</button>
+      </div>
+      <div class="fd-metrics">
+        <div class="fd-metric"><div class="fdm-num">90%+</div><div class="fdm-label">Data accuracy rate</div></div>
+        <div class="fd-metric"><div class="fdm-num">3s</div><div class="fdm-label">Dashboard refresh</div></div>
+        <div class="fd-metric"><div class="fdm-num">4</div><div class="fdm-label">Weather parameters</div></div>
+        <div class="fd-metric"><div class="fdm-num">24/7</div><div class="fdm-label">Live monitoring</div></div>
+      </div>
+    </div>
+    <div class="fv-panel">
+      <div class="fv-weather">
+        <div class="fv-header"><span class="fv-title">Faisalabad — Live</span><span class="fv-badge-live">LIVE</span></div>
+        <div class="fv-w4">
+          <div class="fv-wbox"><div class="fv-wval">34°C</div><div class="fv-wlbl">Temp</div></div>
+          <div class="fv-wbox"><div class="fv-wval">62%</div><div class="fv-wlbl">Humid</div></div>
+          <div class="fv-wbox"><div class="fv-wval">18</div><div class="fv-wlbl">km/h</div></div>
+          <div class="fv-wbox"><div class="fv-wval">8%</div><div class="fv-wlbl">Rain</div></div>
+        </div>
+        <div style="font-size:10px;color:#3d6e45;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;font-weight:600;">7-day temperature trend</div>
+        <div class="fv-chart">
+          <div class="fv-bar" style="height:55%;background:#28a745;"></div>
+          <div class="fv-bar" style="height:70%;background:#28a745;"></div>
+          <div class="fv-bar" style="height:60%;background:#28a745;"></div>
+          <div class="fv-bar" style="height:85%;background:#5cd47a;"></div>
+          <div class="fv-bar" style="height:90%;background:#EF9F27;"></div>
+          <div class="fv-bar" style="height:78%;background:#28a745;"></div>
+          <div class="fv-bar" style="height:65%;background:#28a745;"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:6px;">
+          <span style="font-size:9px;color:#3d6e45;">Mon</span>
+          <span style="font-size:9px;color:#3d6e45;">Tue</span>
+          <span style="font-size:9px;color:#3d6e45;">Wed</span>
+          <span style="font-size:9px;color:#3d6e45;">Thu</span>
+          <span style="font-size:9px;color:#EF9F27;">Fri</span>
+          <span style="font-size:9px;color:#3d6e45;">Sat</span>
+          <span style="font-size:9px;color:#3d6e45;">Sun</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 2 -->
+<section class="fd-section">
+  <div class="fd-grid rev">
+    <div>
+      <div class="fd-number">02</div>
+      <div class="fd-eyebrow">Crop Impact Analysis</div>
+      <h2 class="fd-h2">Understand how weather<br>shapes your harvest</h2>
+      <p class="fd-p">Select any crop — wheat, rice, cotton, sugarcane, maize — and your district, then let the system analyze how historical and current weather parameters have shaped yield outcomes. Calculates Low, Medium, or High risk levels and delivers tailored recommendations including irrigation schedules, fertilizer timing, and optimal harvest windows.</p>
+      <div class="fd-tags">
+        <span class="fd-tag">10+ Crops supported</span>
+        <span class="fd-tag">Risk scoring</span>
+        <span class="fd-tag">Irrigation advisory</span>
+        <span class="fd-tag">Historical analysis</span>
+        <button class="ftab active" onclick="window.location.href='Analysis.html'">Explore</button>
+      </div>
+      <div class="fd-metrics">
+        <div class="fd-metric"><div class="fdm-num">10+</div><div class="fdm-label">Crops supported</div></div>
+        <div class="fd-metric"><div class="fdm-num">3</div><div class="fdm-label">Risk levels</div></div>
+        <div class="fd-metric"><div class="fdm-num">5+</div><div class="fdm-label">Years historical data</div></div>
+        <div class="fd-metric"><div class="fdm-num">Auto</div><div class="fdm-label">Smart recommendations</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="fv-crop-panel">
+        <div style="font-size:12px;font-weight:700;color:#0d3b1a;margin-bottom:4px;">Crop yield outlook — Punjab</div>
+        <div style="font-size:11px;color:#5a7a5a;margin-bottom:18px;">Based on current weather conditions</div>
+        <div class="fv-crop-row">
+          <div class="fv-crop-ico" style="background:#e8f7ea;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2 Q12 7 12 10 C12 13 10.7 15 9 15 C7.3 15 6 13 6 10 Q6 7 9 2Z" fill="#28a745"/></svg></div>
+          <span class="fv-crop-name" style="font-size:12px;color:#0d3b1a;font-weight:600;">Wheat</span>
+          <div class="fv-crop-bar-wrap"><div class="fv-crop-track"><div class="fv-crop-fill" style="width:82%;background:#28a745;"></div></div></div>
+          <span class="fv-crop-pct">82%</span>
+        </div>
+        <div class="fv-crop-row">
+          <div class="fv-crop-ico" style="background:#e1f5ee;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="8" y="3" width="2" height="12" rx="1" fill="#1D9E75"/><ellipse cx="9" cy="7" rx="4" ry="2.5" fill="#1D9E75" opacity=".7"/></svg></div>
+          <span class="fv-crop-name" style="font-size:12px;color:#0d3b1a;font-weight:600;">Rice</span>
+          <div class="fv-crop-bar-wrap"><div class="fv-crop-track"><div class="fv-crop-fill" style="width:67%;background:#1D9E75;"></div></div></div>
+          <span class="fv-crop-pct" style="color:#0F6E56;">67%</span>
+        </div>
+        <div class="fv-crop-row">
+          <div class="fv-crop-ico" style="background:#faeeda;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="5" fill="#BA7517" opacity=".7"/><path d="M9 4 L9 14" stroke="#BA7517" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+          <span class="fv-crop-name" style="font-size:12px;color:#0d3b1a;font-weight:600;">Cotton</span>
+          <div class="fv-crop-bar-wrap"><div class="fv-crop-track"><div class="fv-crop-fill" style="width:54%;background:#BA7517;"></div></div></div>
+          <span class="fv-crop-pct" style="color:#854F0B;">54%</span>
+        </div>
+        <div class="fv-crop-row">
+          <div class="fv-crop-ico" style="background:#e6f1fb;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="7" y="2" width="4" height="14" rx="2" fill="#185FA5"/></svg></div>
+          <span class="fv-crop-name" style="font-size:12px;color:#0d3b1a;font-weight:600;">Sugarcane</span>
+          <div class="fv-crop-bar-wrap"><div class="fv-crop-track"><div class="fv-crop-fill" style="width:78%;background:#185FA5;"></div></div></div>
+          <span class="fv-crop-pct" style="color:#0C447C;">78%</span>
+        </div>
+        <div style="margin-top:16px;background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:12px 14px;">
+          <div style="font-size:11px;font-weight:700;color:#92400e;margin-bottom:4px;">Advisory for Cotton</div>
+          <div style="font-size:11px;color:#78350f;line-height:1.5;">High temperatures forecast this week. Increase irrigation frequency and apply potassium-rich fertilizer to reduce heat stress risk.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 3 AI -->
+<section class="fd-section">
+  <div class="fd-grid">
+    <div>
+      <div class="fd-number">03</div>
+      <div class="fd-eyebrow">AI Prediction System</div>
+      <h2 class="fd-h2">10–30 day crop yield<br>forecasting with ML</h2>
+      <p class="fd-p">Powered by Python and Scikit-learn, AgroInsight's machine learning engine processes years of historical weather and crop data to generate accurate short-term yield predictions. Models are trained using regression algorithms validated against real Punjab data, achieving over 80% precision. Predictions are surfaced directly on the dashboard with confidence scores and trend explanations.</p>
+      <div class="fd-tags">
+        <span class="fd-tag">Python</span>
+        <span class="fd-tag">Scikit-learn</span>
+        <span class="fd-tag">Regression models</span>
+        <span class="fd-tag">Pandas + NumPy</span>
+        <span class="fd-tag">Confidence scoring</span>
+        <button class="ftab active" onclick="window.location.href='Chatbot.html'">Explore</button>
+      </div>
+      <div class="fd-metrics">
+        <div class="fd-metric"><div class="fdm-num">80%</div><div class="fdm-label">Prediction precision</div></div>
+        <div class="fd-metric"><div class="fdm-num">30d</div><div class="fdm-label">Max forecast horizon</div></div>
+        <div class="fd-metric"><div class="fdm-num">5+</div><div class="fdm-label">Years training data</div></div>
+        <div class="fd-metric"><div class="fdm-num">REST</div><div class="fdm-label">API integration</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="fv-risk-panel">
+        <div style="font-size:12px;font-weight:700;color:#5cd47a;text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px;">AI Prediction Dashboard</div>
+        <div style="display:flex;gap:10px;margin-bottom:16px;">
+          <div style="flex:1;background:rgba(40,167,69,.08);border:1px solid rgba(40,167,69,.2);border-radius:12px;padding:14px;text-align:center;">
+            <div style="font-size:28px;font-weight:800;color:#5cd47a;">87%</div>
+            <div style="font-size:10px;color:#3d6e45;margin-top:4px;text-transform:uppercase;letter-spacing:.5px;">Model confidence</div>
+          </div>
+          <div style="flex:1;background:rgba(40,167,69,.08);border:1px solid rgba(40,167,69,.2);border-radius:12px;padding:14px;text-align:center;">
+            <div style="font-size:28px;font-weight:800;color:#64b5f6;">+12%</div>
+            <div style="font-size:10px;color:#3d6e45;margin-top:4px;text-transform:uppercase;letter-spacing:.5px;">Wheat yield trend</div>
+          </div>
+        </div>
+        <div class="fv-risk-row">
+          <span class="fv-risk-label">Wheat — next 10 days</span>
+          <span class="fv-risk-pill" style="background:rgba(40,167,69,.15);color:#5cd47a;">Favorable</span>
+        </div>
+        <div class="fv-risk-row">
+          <span class="fv-risk-label">Rice — next 10 days</span>
+          <span class="fv-risk-pill" style="background:rgba(239,159,39,.15);color:#EF9F27;">Monitor</span>
+        </div>
+        <div class="fv-risk-row">
+          <span class="fv-risk-label">Cotton — next 10 days</span>
+          <span class="fv-risk-pill" style="background:rgba(226,75,74,.15);color:#E24B4A;">High risk</span>
+        </div>
+        <div class="fv-risk-row">
+          <span class="fv-risk-label">Sugarcane — next 10 days</span>
+          <span class="fv-risk-pill" style="background:rgba(40,167,69,.15);color:#5cd47a;">Favorable</span>
+        </div>
+        <div class="fv-risk-row">
+          <span class="fv-risk-label">Maize — next 10 days</span>
+          <span class="fv-risk-pill" style="background:rgba(239,159,39,.15);color:#EF9F27;">Monitor</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 4 ALERTS -->
+<section class="fd-section">
+  <div class="fd-grid rev">
+    <div>
+      <div class="fd-number">04</div>
+      <div class="fd-eyebrow">Disaster Alerts</div>
+      <h2 class="fd-h2">Early warnings that protect<br>lives and livelihoods</h2>
+      <p class="fd-p">AgroInsight continuously monitors weather thresholds and immediately dispatches alerts when flood, drought, heatwave, or storm conditions are detected. Notifications appear on the dashboard within seconds, with optional SMS integration. Each alert includes clear safety protocols and step-by-step emergency measures tailored to the specific disaster type and affected crop.</p>
+      <div class="fd-tags">
+        <span class="fd-tag">Flood detection</span>
+        <span class="fd-tag">Drought alerts</span>
+        <span class="fd-tag">Heatwave warnings</span>
+        <span class="fd-tag">SMS integration</span>
+        <span class="fd-tag">Safety protocols</span>
+        <button class="ftab active" onclick="window.location.href='Alert.html'">Explore</button>
+      </div>
+      <div class="fd-metrics">
+        <div class="fd-metric"><div class="fdm-num">&lt;10s</div><div class="fdm-label">Alert delivery</div></div>
+        <div class="fd-metric"><div class="fdm-num">3</div><div class="fdm-label">Disaster types</div></div>
+        <div class="fd-metric"><div class="fdm-num">SMS</div><div class="fdm-label">Multi-channel alerts</div></div>
+        <div class="fd-metric"><div class="fdm-num">24/7</div><div class="fdm-label">Continuous monitoring</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="fv-alert-panel">
+        <div style="font-size:12px;font-weight:700;color:#92400e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px;">Active alerts — Punjab</div>
+        <div class="fv-alert" style="background:#fef3c7;border:1px solid #fde68a;">
+          <div class="fv-alert-icon" style="background:#fde68a;">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2L14 13H2Z" fill="none" stroke="#92400e" stroke-width="1.3" stroke-linejoin="round"/><line x1="8" y1="7" x2="8" y2="10" stroke="#92400e" stroke-width="1.3" stroke-linecap="round"/><circle cx="8" cy="11.5" r=".8" fill="#92400e"/></svg>
+          </div>
+          <div><div class="fv-alert-title" style="color:#92400e;">Heatwave warning — Faisalabad</div><div class="fv-alert-sub" style="color:#78350f;">Temperatures exceeding 42°C expected in 48 hours. Irrigate before 7am and after 7pm.</div></div>
+        </div>
+        <div class="fv-alert" style="background:#fee2e2;border:1px solid #fca5a5;">
+          <div class="fv-alert-icon" style="background:#fca5a5;">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2 Q11 6 11 9 C11 11.2 9.7 13 8 13 C6.3 13 5 11.2 5 9 Q5 6 8 2Z" fill="none" stroke="#991b1b" stroke-width="1.3"/><line x1="5" y1="5" x2="11" y2="11" stroke="#991b1b" stroke-width="1.3" stroke-linecap="round"/></svg>
+          </div>
+          <div><div class="fv-alert-title" style="color:#991b1b;">Flood risk — Dera Ghazi Khan</div><div class="fv-alert-sub" style="color:#7f1d1d;">Heavy rainfall forecast. Move livestock and harvested crops to elevated ground immediately.</div></div>
+        </div>
+        <div class="fv-alert" style="background:#ecfdf5;border:1px solid #6ee7b7;">
+          <div class="fv-alert-icon" style="background:#a7f3d0;">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 8 C4 4 12 4 15 8" stroke="#065f46" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M3 11 C5.5 9 10.5 9 13 11" stroke="#065f46" stroke-width="1.2" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <div><div class="fv-alert-title" style="color:#065f46;">Drought advisory — Bahawalpur</div><div class="fv-alert-sub" style="color:#047857;">Below-average rainfall forecast for next 3 weeks. Switch to drought-resistant crop varieties.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 5 ECONOMICS -->
+<section class="fd-section" style="border-bottom:none;">
+  <div class="fd-grid">
+    <div>
+      <div class="fd-number">05</div>
+      <div class="fd-eyebrow">Economic Impact Visualization</div>
+      <h2 class="fd-h2">From field conditions<br>to market prices</h2>
+      <p class="fd-p">Interactive charts and dashboards reveal how weather variations directly drive agricultural market prices and farmer income. Researchers and policymakers can explore correlations between rainfall, temperature, and commodity prices over multi-year periods. Exportable reports make it easy to present evidence-based findings to government bodies and aid organizations.</p>
+      <div class="fd-tags">
+        <span class="fd-tag">Price correlation charts</span>
+        <span class="fd-tag">Income analysis</span>
+        <span class="fd-tag">Downloadable reports</span>
+        <span class="fd-tag">Policy dashboards</span>
+        <button class="ftab active" onclick="window.location.href='Economi.html'">Explore</button>
+      </div>
+      <div class="fd-metrics">
+        <div class="fd-metric"><div class="fdm-num">PDF</div><div class="fdm-label">Downloadable reports</div></div>
+        <div class="fd-metric"><div class="fdm-num">5+</div><div class="fdm-label">Chart types</div></div>
+        <div class="fd-metric"><div class="fdm-num">Multi</div><div class="fdm-label">Year comparison</div></div>
+        <div class="fd-metric"><div class="fdm-num">Live</div><div class="fdm-label">Price data feed</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="fv-econ-panel">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+          <div style="font-size:12px;font-weight:700;color:#0d3b1a;">Crop price vs. rainfall — 2024</div>
+          <div style="font-size:10px;color:#7a9a7a;background:#e8f7ea;padding:3px 10px;border-radius:8px;border:1px solid #c8e6c8;">Punjab</div>
+        </div>
+        <div class="fv-econ-chart">
+          <div class="fv-econ-bar" style="height:45%;background:#28a745;"><span class="fv-econ-lbl">J</span></div>
+          <div class="fv-econ-bar" style="height:55%;background:#28a745;"><span class="fv-econ-lbl">F</span></div>
+          <div class="fv-econ-bar" style="height:80%;background:#1D9E75;"><span class="fv-econ-lbl">M</span></div>
+          <div class="fv-econ-bar" style="height:90%;background:#1D9E75;"><span class="fv-econ-lbl">A</span></div>
+          <div class="fv-econ-bar" style="height:65%;background:#28a745;"><span class="fv-econ-lbl">M</span></div>
+          <div class="fv-econ-bar" style="height:30%;background:#BA7517;"><span class="fv-econ-lbl">J</span></div>
+          <div class="fv-econ-bar" style="height:25%;background:#E24B4A;"><span class="fv-econ-lbl">J</span></div>
+          <div class="fv-econ-bar" style="height:40%;background:#BA7517;"><span class="fv-econ-lbl">A</span></div>
+          <div class="fv-econ-bar" style="height:70%;background:#28a745;"><span class="fv-econ-lbl">S</span></div>
+          <div class="fv-econ-bar" style="height:85%;background:#1D9E75;"><span class="fv-econ-lbl">O</span></div>
+          <div class="fv-econ-bar" style="height:75%;background:#28a745;"><span class="fv-econ-lbl">N</span></div>
+          <div class="fv-econ-bar" style="height:50%;background:#28a745;"><span class="fv-econ-lbl">D</span></div>
+        </div>
+        <div class="fv-econ-stats">
+          <div class="fv-es"><div class="fv-es-num" style="color:#28a745;">+18%</div><div class="fv-es-lbl">Wheat price vs avg</div></div>
+          <div class="fv-es"><div class="fv-es-num" style="color:#E24B4A;">-12%</div><div class="fv-es-lbl">Cotton income drop</div></div>
+          <div class="fv-es"><div class="fv-es-num" style="color:#185FA5;">+9%</div><div class="fv-es-lbl">Rice surplus value</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="how-header">
+    <div class="eyebrow" style="color:#5cd47a;">How it works</div>
+    <h2>From raw data to actionable insight</h2>
+    <p>A seamless 5-step pipeline that turns weather signals into clear crop decisions in real time.</p>
+  </div>
+  <div class="how-steps">
+    <div class="how-connector"></div>
+    <div class="how-step">
+      <div class="hs-circle" style="background:rgba(40,167,69,.1);color:#5cd47a;">1</div>
+      <div class="hs-title">Data collection</div>
+      <div class="hs-sub">OpenWeather API feeds real-time data into MySQL every 10 minutes</div>
+    </div>
+    <div class="how-step">
+      <div class="hs-circle" style="background:rgba(100,181,246,.1);color:#64b5f6;">2</div>
+      <div class="hs-title">Processing</div>
+      <div class="hs-sub">PHP backend cleans and structures weather parameters for analysis</div>
+    </div>
+    <div class="how-step">
+      <div class="hs-circle" style="background:rgba(127,119,221,.1);color:#AFA9EC;">3</div>
+      <div class="hs-title">ML prediction</div>
+      <div class="hs-sub">Python Scikit-learn models generate 10–30 day yield forecasts</div>
+    </div>
+    <div class="how-step">
+      <div class="hs-circle" style="background:rgba(239,159,39,.1);color:#EF9F27;">4</div>
+      <div class="hs-title">Risk scoring</div>
+      <div class="hs-sub">Thresholds trigger Low / Medium / High alerts automatically</div>
+    </div>
+    <div class="how-step">
+      <div class="hs-circle" style="background:rgba(226,75,74,.1);color:#E24B4A;">5</div>
+      <div class="hs-title">Insights delivered</div>
+      <div class="hs-sub">Dashboard, SMS alerts, and downloadable reports for all users</div>
+    </div>
+  </div>
+</section>
+
+<section class="techstack">
+  <div class="ts-header">
+    <div class="eyebrow">Technology stack</div>
+    <h2 class="section-h2" style="font-size:28px;">Built with <span>modern</span> tools</h2>
+  </div>
+  <div class="ts-grid">
+    <div class="ts-card">
+      <div class="ts-icon" style="background:#e8f7ea;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="16" height="16" rx="3" fill="none" stroke="#28a745" stroke-width="1.5"/><path d="M7 11H15M7 8H12M7 14H10" stroke="#28a745" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+      <div class="ts-name">PHP</div><div class="ts-role">Backend server</div>
+    </div>
+    <div class="ts-card">
+      <div class="ts-icon" style="background:#faeeda;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="7" fill="none" stroke="#BA7517" stroke-width="1.5"/><path d="M8 9L11 7L14 9V13L11 15L8 13Z" stroke="#BA7517" stroke-width="1.2" fill="none" stroke-linejoin="round"/></svg></div>
+      <div class="ts-name">Python</div><div class="ts-role">ML engine</div>
+    </div>
+    <div class="ts-card">
+      <div class="ts-icon" style="background:#e6f1fb;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="7" width="16" height="11" rx="2" fill="none" stroke="#185FA5" stroke-width="1.5"/><path d="M7 7V5C7 3.9 7.9 3 9 3H13C14.1 3 15 3.9 15 5V7" stroke="#185FA5" stroke-width="1.2" fill="none"/></svg></div>
+      <div class="ts-name">MySQL</div><div class="ts-role">Database</div>
+    </div>
+    <div class="ts-card">
+      <div class="ts-icon" style="background:#fbeaf0;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="5" width="16" height="12" rx="2" fill="none" stroke="#993556" stroke-width="1.5"/><path d="M7 9H15M7 13H11" stroke="#993556" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+      <div class="ts-name">HTML5 / CSS3</div><div class="ts-role">Frontend</div>
+    </div>
+    <div class="ts-card">
+      <div class="ts-icon" style="background:#eeedfe;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 16L10 8L13 12L16 9L19 16Z" fill="none" stroke="#534AB7" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+      <div class="ts-name">Scikit-learn</div><div class="ts-role">ML models</div>
+    </div>
+    <div class="ts-card">
+      <div class="ts-icon" style="background:#e1f5ee;"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="7" fill="none" stroke="#0F6E56" stroke-width="1.5"/><path d="M8 11 Q11 7 14 11" stroke="#0F6E56" stroke-width="1.3" fill="none" stroke-linecap="round"/></svg></div>
+      <div class="ts-name">OpenWeather</div><div class="ts-role">Weather API</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner" style="padding:72px 44px;">
+  <div class="cta-bg"><div class="cta-glow1"></div></div>
+  <div class="cta-inner">
+    <div class="cta-eyebrow">Get involved</div>
+    <h2 class="cta-h2">Have a question or<br>want to contribute?</h2>
+    <p class="cta-p">Whether you are a farmer with feedback, a researcher with data, or a developer who wants to collaborate — we'd love to hear from you.</p>
+    <div class="cta-btns">
+      <button class="btn-cta-main" onclick="window.location.href='Contact.html'">Contact us now</button>
+    </div>
+  </div>
+</section>
+
+</div><!-- end features -->
+
+<!-- FOOTER (on all pages) -->
+<footer class="footer">
+  <div class="footer-main">
+    <div>
+      <div class="fm-brand"><em>Agro</em>Insight</div>
+      <p class="fm-desc">A final year BS Software Engineering project combining real-time weather data, machine learning, and agricultural analytics — designed to support Pakistan's farming community at the University of Agriculture, Faisalabad.</p>
+      <div class="fm-social">
+        <div class="social-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="10" height="10" rx="3" stroke="#3d6e45" stroke-width="1.2"/><circle cx="7" cy="7" r="2.5" stroke="#3d6e45" stroke-width="1.2"/><circle cx="10.2" cy="3.8" r=".8" fill="#3d6e45"/></svg></div>
+        <div class="social-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 3L6.5 7L2 11H3.5L7 8.5L10.5 11H12L7.5 7L12 3H10.5L7 5.5L3.5 3Z" fill="#3d6e45"/></svg></div>
+        <div class="social-btn"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 2H5.5L7 6L5.5 7.5C6.2 9 6.5 9.5 8 10.5L9.5 9L12 10.5V12C9 13 2 10 2 2Z" stroke="#3d6e45" stroke-width="1.2" fill="none" stroke-linejoin="round"/></svg></div>
+      </div>
+    </div>
+    <div class="fc">
+      <h4>Platform</h4>
+      <a href="Index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="Contact.html">Contact</a>
+    </div>
+    <div class="fc">
+      <h4>Modules</h4>
+      <a>Weather data</a>
+      <a>Crop analysis</a>
+      <a>AI predictions</a>
+      <a>Disaster alerts</a>
+      <a>Economic reports</a>
+    </div>
+    <div class="fc">
+      <h4>Project</h4>
+      <a>About AgroInsight</a>
+      <a>Research report</a>
+      <a>UAF — CS Dept</a>
+      <a>Methodology</a>
+      <a>Timeline</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="fb-copy">© 2025 AgroInsight · University of Agriculture, Faisalabad · BS Software Engineering</span>
+    <div class="fb-pills">
+      <span class="fbp">PHP</span>
+      <span class="fbp">Python</span>
+      <span class="fbp">MySQL</span>
+      <span class="fbp">Scikit-learn</span>
+    </div>
+  </div>
+</footer>
+<!-- CHATBOT BUTTON -->
+   
+   <a href="Chatbot.html" class="chatbot-btn">
+   <i data-lucide="message-square">🤖</i>
+</a>
+
+</body>
+</html>
